@@ -95,18 +95,23 @@ body {
   border: 0;
 }
 
-#wrap .down-arrow {
+#wrap #down-arrow {
   position: fixed;
   font-size: min(56px, calc(var(--winWidth) * 0.56 * 0.08));
   bottom: calc(var(--winHeight) * 0.05);
   left: calc(var(--winWidth) * 0.05);
   opacity: 0.5;
+  cursor: pointer;
   border: 0;
   display: none;
   z-index: 3;
 }
 
-#wrap .down-arrow * {
+#wrap #down-arrow i {
+  display: block;
+}
+
+#wrap #down-arrow * {
   border: 0;
 }
 
@@ -255,21 +260,21 @@ body {
   border: 0;
 }
 
-#wrap #main #products #productList {
+#wrap #main #products #product-list {
   border: 0;
 }
 
-#wrap #main #products #productList>div {
+#wrap #main #products #product-list>div {
   border: 0;
 }
 
-#wrap #main #products #productList>div .product {
+#wrap #main #products #product-list>div .product {
   position: relative;
   height: var(--winHeight);
   border: 0;
 }
 
-#wrap #main #products #productList>div .product .img {
+#wrap #main #products #product-list>div .product .img {
   position: absolute;
   top: calc(var(--menuHeight) + var(--winHeight) * 0.0);
   left: calc(var(--winWidth) * 0.05);
@@ -279,14 +284,14 @@ body {
   border: 0;
 }
 
-#wrap #main #products #productList>div .product .img img {
+#wrap #main #products #product-list>div .product .img img {
   vertical-align: bottom;
   min-width: 100%;
   min-height: 100%;
   border: 0;
 }
 
-#wrap #main #products #productList>div .product p {
+#wrap #main #products #product-list>div .product p {
   position: absolute;
   width: calc(var(--winWidth) * 0.33);
   bottom: calc(var(--winHeight) * 0.05);
@@ -295,12 +300,12 @@ body {
   border: 0;
 }
 
-#wrap #main #products #productList>div .product.right .img {
+#wrap #main #products #product-list>div .product.right .img {
   right: calc(var(--winWidth) * 0.05);
   left: auto;
 }
 
-#wrap #main #products #productList>div .product.right p {
+#wrap #main #products #product-list>div .product.right p {
   left: calc(var(--winWidth) * 0.05);
   right: auto;
 }
@@ -318,7 +323,7 @@ body {
   border: 0;
 }
 
-#wrap #main #contact #contactList {
+#wrap #main #contact #contact-list {
   position: absolute;
   width: calc(var(--winWidth) * 0.4);
   top: calc(var(--menuHeight) + var(--winHeight) * 0.1);
@@ -326,17 +331,17 @@ body {
   border: 0;
 }
 
-#wrap #main #contact #contactList div {
+#wrap #main #contact #contact-list div {
   border: 0;
 }
 
-#wrap #main #contact #contactList h2 {
+#wrap #main #contact #contact-list h2 {
   font-size: var(--contacth2Font);
   margin-top: 20px;
   border: 0;
 }
 
-#wrap #main #contact #contactList p {
+#wrap #main #contact #contact-list p {
   font-size: var(--contactPFont);
   padding: 20px;
   border: 0;

@@ -12,14 +12,21 @@ function initialization() {
     log('initialization');
 
     window.addEventListener("load", () => {
+        hLoad2();
         initThree();
         hScroll2();
-        document.addEventListener('scroll', hScroll2, false);
-        hLoad2();
+        document.addEventListener('scroll', () => {
+            hScroll2();
+            arrowBtnUpdate();
+        }, false);
         addMap();
     });
-
-    window.addEventListener('resize', initCSS);
+    window.addEventListener('resize', () => {
+        initCSS();
+        hScroll1();
+        hScroll2();
+        arrowBtnUpdate();
+    });
 
     initCSS();
     if (rdev) {
@@ -27,7 +34,7 @@ function initialization() {
             $("#intro").animate({
                 top: `-${g_winHeight}px`
             }, 100).fadeOut(0, function () {
-                $('#wrap .down-arrow').delay(2000).fadeIn(1000);
+                $('#wrap #down-arrow').delay(500).fadeIn(1000);
             });
         });
     } else {
@@ -35,7 +42,7 @@ function initialization() {
             $("#intro").animate({
                 top: `-${g_winHeight}px`
             }, 1000).fadeOut(0, function () {
-                $('#wrap .down-arrow').delay(2000).fadeIn(1000);
+                $('#wrap #down-arrow').delay(500).fadeIn(1000);
             });
             location.href = '#front';
         });
@@ -48,7 +55,7 @@ function initCSS() {
     g_winWidth = $(window).width();
     g_winHeight = $(window).height();
     // g_winHeight = $(window).outerHeight(); // for including hscroll & for address bar of mobile
-    console.log(g_winHeight);
+    // log(g_winHeight);
 
     document.documentElement.style.setProperty('--winWidth', `${g_winWidth}px`);
     document.documentElement.style.setProperty('--winHeight', `${g_winHeight}px`);
@@ -64,16 +71,16 @@ function hScroll2() {
     // log('hScroll2');
     let opacity;
     let winH = g_winHeight;
-    opacity = opacityCtrl(-1, -1, 0.1 * winH, 0.8 * winH, g_mouse.scrTop);
+    opacity = opacityCtrl(-1, -1, 0.1 * winH, 0.8 * winH, $(document).scrollTop());
     $("#front").css({ opacity });
 
-    opacity = opacityCtrl(0.2 * winH, 0.5 * winH, 100 * winH, 100 * winH, g_mouse.scrTop);
+    opacity = opacityCtrl(0.2 * winH, 0.5 * winH, 100 * winH, 100 * winH, $(document).scrollTop());
     $("#menu").css({ opacity });
 
-    opacity = opacityCtrl(0.2 * winH, 0.5 * winH, 1.3 * winH, 1.8 * winH, g_mouse.scrTop);
+    opacity = opacityCtrl(0.2 * winH, 0.5 * winH, 1.3 * winH, 1.8 * winH, $(document).scrollTop());
     $("#story").css({ opacity });
 
-    opacity = opacityCtrl(1.2 * winH, 1.5 * winH, 100 * winH, 100 * winH, g_mouse.scrTop);
+    opacity = opacityCtrl(1.2 * winH, 1.5 * winH, 100 * winH, 100 * winH, $(document).scrollTop());
     $("#products").css({ opacity });
     $("#contact").css({ opacity });
 }
