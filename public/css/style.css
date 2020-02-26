@@ -1,0 +1,267 @@
+@import url('https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif+KR&display=swap');
+
+@font-face {
+  font-family: 'Colonna';
+  src: url('../../css/COLONNA.woff');
+}
+
+:root {
+  /* 100% for intro */
+  --winWidth: 100%;
+  --winHeight: 100vh;
+  --mainColor: #444242;
+  --subColor: #EEEEEE;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+div,
+h1,
+p,
+ul,
+li,
+a,
+img,
+span,
+canvas {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: 1px solid red;
+  color: var(--mainColor);
+  font-family: 'Noto Serif KR', 'Nanum Gothic';
+}
+
+#wrap {
+  border: 0;
+}
+
+#wrap #intro {
+  position: fixed;
+  width: var(--winWidth);
+  height: var(--winHeight);
+  color: var(--subColor);
+  background-color: var(--mainColor);
+  z-index: 5;
+  border: 0;
+  user-select: none;
+}
+
+#wrap #intro>div {
+  color: var(--subColor);
+  text-align: center;
+  line-height: var(--winHeight);
+  font-size: calc(var(--winWidth) * 0.02);
+  border: 0;
+  display: none;
+}
+
+#wrap #intro>div span {
+  color: inherit;
+  font-family: 'Colonna MT';
+  font-size: calc(var(--winWidth) * 0.03);
+  border: 0;
+}
+
+#wrap #webgl-output {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  border: 0;
+}
+
+#wrap #webgl-output canvas {
+  display: block;
+  border: 0;
+}
+
+#wrap #front {
+  position: relative;
+  height: var(--winHeight);
+  color: var(--mainColor);
+  user-select: none;
+  border: 0;
+}
+
+#wrap #front h1 {
+  position: absolute;
+  top: calc(var(--winHeight) * 0.125);
+  left: calc(var(--winWidth) * 0.125);
+  font-size: calc(var(--winWidth) * 0.07);
+  font-weight: normal;
+  font-family: 'Colonna';
+  border: 0;
+}
+
+#wrap #front p {
+  position: absolute;
+  bottom: calc(var(--winHeight) * 0.125);
+  right: calc(var(--winWidth) * 0.120);
+  font-size: calc(var(--winWidth) * 0.017);
+  text-align: right;
+  line-height: calc(var(--winWidth) * 0.03);
+  border: 0;
+}
+
+
+
+:root {
+  --menuHeight: 70px;
+}
+
+#wrap #main {
+  width: var(--winWidth);
+  border: 0;
+}
+
+/* menu */
+#wrap #main #menu {
+  position: sticky;
+  top: 0;
+  opacity: 0;
+  width: calc(var(--winWidth) * 0.94);
+  margin: 0 auto;
+  background-color: var(--subColor);
+  border: 0;
+  border-bottom: 1px solid var(--mainColor);
+  z-index: 2;
+}
+
+#wrap #main #menu #title {
+  float: left;
+  margin-left: calc(var(--winWidth) * 0.02);
+  line-height: var(--menuHeight);
+  border: 0;
+}
+
+#wrap #main #menu #title a {
+  text-decoration: none;
+  font-size: 40px;
+  font-family: 'Colonna';
+  color: inherit;
+  border: 0;
+}
+
+#wrap #main #menu ul {
+  float: right;
+  list-style-type: none;
+  font-size: 0;
+  margin-right: calc(var(--winWidth) * 0.02);
+  border: 0;
+}
+
+#wrap #main #menu ul li {
+  font-size: 20px;
+  line-height: var(--menuHeight);
+  margin-left: calc(var(--winWidth) * 0.02);
+  display: inline-block;
+  border: 0;
+}
+
+#wrap #main #menu ul li a {
+  text-decoration: none;
+  color: inherit;
+  border: 0;
+}
+
+/* story */
+#wrap #main #story {
+  position: relative;
+  height: var(--winHeight);
+  border: 0;
+  opacity: 0;
+}
+
+#wrap #main #story .img {
+  position: absolute;
+  top: calc(var(--winHeight) * 0.1);
+  left: calc(var(--winWidth) * 0.05);
+  width: calc(var(--winWidth) * 0.55);
+  height: calc(var(--winHeight) * 0.8);
+  overflow: hidden;
+  border: 0;
+}
+
+#wrap #main #story .img img {
+  vertical-align: bottom;
+  min-width: 100%;
+  min-height: 100%;
+  border: 0;
+}
+
+#wrap #main #story p {
+  position: absolute;
+  width: calc(var(--winWidth) * 0.33);
+  bottom: calc(var(--winHeight) * 0.05);
+  right: calc(var(--winWidth) * 0.05);
+  font-size: min(22px, calc(var(--winWidth) * 0.017));
+  border: 0;
+}
+
+/* products */
+#wrap #main #products {
+  opacity: 0;
+  border: 0;
+}
+
+#wrap #main #products>div {
+  border: 0;
+}
+
+#wrap #main #products>div .product {
+  position: relative;
+  height: var(--winHeight);
+  border: 0;
+}
+
+#wrap #main #products>div .product .img {
+  position: absolute;
+  top: calc(var(--winHeight) * 0.1);
+  left: calc(var(--winWidth) * 0.05);
+  width: calc(var(--winWidth) * 0.55);
+  height: calc(var(--winHeight) * 0.8);
+  overflow: hidden;
+  border: 0;
+}
+
+#wrap #main #products>div .product .img img {
+  vertical-align: bottom;
+  min-width: 100%;
+  min-height: 100%;
+  border: 0;
+}
+
+#wrap #main #products>div .product p {
+  position: absolute;
+  width: calc(var(--winWidth) * 0.33);
+  bottom: calc(var(--winHeight) * 0.05);
+  right: calc(var(--winWidth) * 0.05);
+  font-size: min(22px, calc(var(--winWidth) * 0.017));
+  border: 0;
+}
+
+#wrap #main #products>div .product.right .img {
+  right: calc(var(--winWidth) * 0.05);
+  left: auto;
+}
+
+#wrap #main #products>div .product.right p {
+  left: calc(var(--winWidth) * 0.05);
+  right: auto;
+}
+
+#wrap #main #contact {
+  position: relative;
+  height: var(--winHeight);
+}
