@@ -46,7 +46,8 @@ class ArrowBtn extends React.Component {
         super(props);
         this.state = {
             scrlTop: this.props.scrlTop,
-            menuList: this.props.menuList
+            menuList: this.props.menuList,
+            visible: { up: 'visible', dn: 'visible' }
         };
 
         this.clickUp = this.clickUp.bind(this);
@@ -54,11 +55,15 @@ class ArrowBtn extends React.Component {
     }
 
     static getDerivedStateFromProps(props, state) {
-        // log(props.menuList);
-        return {
-            scrlTop: props.scrlTop,
-            menuList: props.menuList
-        };
+        // log('getDerivedStateFromProps');
+        let scrlTop = props.scrlTop;
+        let menuList = props.menuList;
+        let visible = { up: 'visible', dn: 'visible' };
+
+        if (scrlTop <= menuList[0]) visible.up = 'hidden';
+        else if (scrlTop >= menuList[menuList.length - 1]) visible.dn = 'hidden';
+
+        return { scrlTop, menuList, visible };
     }
 
     findItemNum(scrlTop, menuList) {
@@ -90,19 +95,21 @@ class ArrowBtn extends React.Component {
     clickUp(evt) {
         // console.log('clickUp', this.state.scrlTop);
         // story.scrollIntoView();
-        $(document).scrollTop(this.findItemNum(this.state.scrlTop, this.state.menuList).upTop);
+        // $(document).scrollTop(this.findItemNum(this.state.scrlTop, this.state.menuList).upTop);
+        $('html').stop().animate({ scrollTop: this.findItemNum(this.state.scrlTop, this.state.menuList).upTop }, 1500);
     }
 
     clickDn(evt) {
         // console.log('clickDn', this.state.scrlTop);
-        $(document).scrollTop(this.findItemNum(this.state.scrlTop, this.state.menuList).dnTop);
+        // $(document).scrollTop(this.findItemNum(this.state.scrlTop, this.state.menuList).dnTop);
+        $('html').stop().animate({ scrollTop: this.findItemNum(this.state.scrlTop, this.state.menuList).dnTop }, 1500);
     }
 
     render() {
         return (
             <div>
-                <i onClick={this.clickUp} className="fas fa-chevron-up"></i>
-                <i onClick={this.clickDn} className="fas fa-chevron-down"></i>
+                <i style={{ visibility: this.state.visible.up }} onClick={this.clickUp} className="fas fa-chevron-up"></i>
+                <i style={{ visibility: this.state.visible.dn }} onClick={this.clickDn} className="fas fa-chevron-down"></i>
             </div>
         );
     }

@@ -99,9 +99,8 @@ body {
   position: fixed;
   font-size: min(56px, calc(var(--winWidth) * 0.56 * 0.08));
   bottom: calc(var(--winHeight) * 0.05);
-  left: calc(var(--winWidth) * 0.05);
+  left: calc(var(--winWidth) * 0.02);
   opacity: 0.5;
-  cursor: pointer;
   border: 0;
   display: none;
   z-index: 3;
@@ -109,6 +108,8 @@ body {
 
 #wrap #down-arrow i {
   display: block;
+  cursor: pointer;
+  /* visibility: visible; */
 }
 
 #wrap #down-arrow * {
