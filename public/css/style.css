@@ -42,8 +42,13 @@ canvas {
   font-family: 'Noto Serif KR', 'Nanum Gothic';
 }
 
+body {
+  background-color: var(--subColor);
+}
+
 #wrap {
   border: 0;
+  /* background-color: var(--subColor); cannot show three ... why? */
 }
 
 #wrap #intro {
@@ -68,7 +73,7 @@ canvas {
 
 #wrap #intro>div span {
   color: inherit;
-  font-family: 'Colonna MT';
+  font-family: 'Colonna';
   font-size: calc(var(--winWidth) * 0.03);
   border: 0;
 }

@@ -1,4 +1,5 @@
 window.addEventListener("load", () => {
+    log('react');
     let products = [];
     for (let i = 0; i < dscrp.length; i++) products.push(
         <Product key={i} dscrp={dscrp[i]} imgSrc={imgSrc[i]} side={imgSide[i]} />

@@ -10,8 +10,8 @@ function initCSS() {
     log("initCSS");
 
     g_winWidth = $(window).width();
-    // g_winHeight = $(window).height();
-    g_winHeight = $(window).outerHeight(); // for including hscroll
+    g_winHeight = $(window).height();
+    // g_winHeight = $(window).outerHeight(); // for including hscroll & for address bar of mobile
 
     document.documentElement.style.setProperty('--winWidth', `${g_winWidth}px`);
     document.documentElement.style.setProperty('--winHeight', `${g_winHeight}px`);
@@ -24,6 +24,7 @@ function initCSS() {
 }
 
 function introAni() {
+    log('introAni');
     if (rdev) {
         $("#intro").children().delay(100).fadeIn(500).delay(100).fadeIn(0, function () {
             $("#intro").animate({
@@ -52,6 +53,7 @@ window.addEventListener("load", () => {
 });
 
 function hScroll2() {
+    // log('hScroll2');
     let opacity;
     let winH = g_winHeight;
     opacity = opacityCtrl(-1, -1, 0.1 * winH, 0.8 * winH, g_mouse.scrTop);

@@ -18,6 +18,7 @@ const D2R = PI / 180;
 
 let g_mouse = {};
 function initThree() {
+    log('initThree');
     // init variables
     let cameraX_o = -200;
     let cameraX_d = -400;
@@ -25,8 +26,8 @@ function initThree() {
     let icosahedronZ_o = 25;
     let fogFar = 1000;
 
-    g_winWidth = $(window).width();
-    g_winHeight = $(window).height();
+    // g_winWidth = $(window).width();
+    // g_winHeight = $(window).height();
 
     g_mouse.x = g_winWidth / 2;
     g_mouse.y = g_winHeight / 2;
@@ -117,9 +118,8 @@ function initThree() {
     // event handlers
     window.addEventListener('resize', function () {
         console.log('hResize');
-        g_winWidth = $(window).width();
-        g_winHeight = $(window).height();
-
+        // g_winWidth = $(window).width();
+        // g_winHeight = $(window).height();
 
         // let fov_v_deg = 15;
         let fov_v_deg = 2 * atan(tan(fov_h / 2) * g_winHeight / g_winWidth) * R2D;
@@ -131,7 +131,7 @@ function initThree() {
     }, false);
 
     document.addEventListener('mousemove', hMousemove, false);
-    document.addEventListener('scroll', hScroll, false);
+    document.addEventListener('scroll', hScroll1, false);
 }
 
 function hMousemove(e) {
@@ -140,7 +140,8 @@ function hMousemove(e) {
     g_mouse.scrTop = $(document).scrollTop();
 }
 
-function hScroll() {
+function hScroll1() {
+    // log('hScroll1', $(window).innerHeight(), $(window).height(), $(window).outerHeight());
     g_mouse.scrTop = $(document).scrollTop();
 }
 
