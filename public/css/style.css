@@ -269,4 +269,18 @@ body {
 #wrap #main #contact {
   position: relative;
   height: var(--winHeight);
+  border: 0;
+}
+
+#wrap #main #contact #map {
+  position: absolute;
+  width: calc(var(--winWidth) * 0.55);
+  height: calc(var(--winHeight) * 0.7);
+  top: calc(var(--winHeight) * 0.2);
+  right: calc(var(--winWidth) * 0.05);
+  border: 2px solid var(--mainColor);
+}
+
+#wrap #main #contact #map * {
+  border: 0;
 }

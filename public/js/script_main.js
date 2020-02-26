@@ -50,6 +50,7 @@ window.addEventListener("load", () => {
     initThree();
     hScroll2();
     document.addEventListener('scroll', hScroll2, false);
+    addMap();
 });
 
 function hScroll2() {
@@ -78,4 +79,20 @@ function opacityCtrl(start0, stop0, start1, stop1, scrTop) {
     else if (scrTop < stop1) opacity = 1 - (scrTop - start1) / (stop1 - start1);
     else opacity = 0;
     return opacity;
+}
+
+// http://apis.map.kakao.com/
+function addMap() {
+    log('addMap');
+    // 37.283185, 127.145192: lotte castle
+
+    let mapContainer = document.getElementById('map');
+    let mapOption = {
+        center: new kakao.maps.LatLng(37.283185, 127.145192), // coordinate of map's center
+        level: 3 // zoom
+    };
+    let map = new kakao.maps.Map(mapContainer, mapOption);
+
+    let marker = new kakao.maps.Marker({ position: new kakao.maps.LatLng(37.283185, 127.145192) });
+    marker.setMap(map);
 }
