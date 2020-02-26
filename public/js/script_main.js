@@ -7,7 +7,7 @@ let g_winWidth;
 let g_winHeight;
 
 function initCSS() {
-    log("initCSS");
+    // log("initCSS");
 
     g_winWidth = $(window).width();
     g_winHeight = $(window).height();
@@ -30,7 +30,6 @@ function introAni() {
             $("#intro").animate({
                 top: `-${g_winHeight}px`
             }, 100).fadeOut();
-            location.href = '#front';
         });
     } else {
         $("#intro").children().delay(500).fadeIn(1000).delay(1000).fadeIn(0, function () {
@@ -50,6 +49,7 @@ window.addEventListener("load", () => {
     initThree();
     hScroll2();
     document.addEventListener('scroll', hScroll2, false);
+    hLoad2();
     addMap();
 });
 

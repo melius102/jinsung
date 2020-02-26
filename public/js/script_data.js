@@ -44,3 +44,11 @@ let imgSrc = [
 ];
 
 let imgSide = ['right', 'left', 'left', 'right'];
+
+let contactTitle = ["주소", "전화번호", "이메일"];
+
+let contactContent = [
+    "경기도 용인시 기흥구 중동 동백준전대로 527번길 80",
+    "010-1234-5678",
+    "jinsung@gmail.com"
+];

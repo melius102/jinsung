@@ -27,6 +27,7 @@ body {
 
 div,
 h1,
+h2,
 p,
 ul,
 li,
@@ -49,6 +50,7 @@ body {
 #wrap {
   border: 0;
   /* background-color: var(--subColor); cannot show three ... why? */
+  /* font-size: 18px, 22px, 24px, 34px, 56px */
 }
 
 #wrap #intro {
@@ -66,7 +68,7 @@ body {
   color: var(--subColor);
   text-align: center;
   line-height: var(--winHeight);
-  font-size: calc(var(--winWidth) * 0.02);
+  font-size: min(34px, calc(var(--winWidth) * 0.34 * 0.08));
   border: 0;
   display: none;
 }
@@ -74,7 +76,7 @@ body {
 #wrap #intro>div span {
   color: inherit;
   font-family: 'Colonna';
-  font-size: calc(var(--winWidth) * 0.03);
+  font-size: min(56px, calc(var(--winWidth) * 0.56 * 0.08));
   border: 0;
 }
 
@@ -103,7 +105,7 @@ body {
   position: absolute;
   top: calc(var(--winHeight) * 0.125);
   left: calc(var(--winWidth) * 0.125);
-  font-size: calc(var(--winWidth) * 0.07);
+  font-size: min(90px, calc(var(--winWidth) * 0.90 * 0.08));
   font-weight: normal;
   font-family: 'Colonna';
   border: 0;
@@ -113,16 +115,17 @@ body {
   position: absolute;
   bottom: calc(var(--winHeight) * 0.125);
   right: calc(var(--winWidth) * 0.120);
-  font-size: calc(var(--winWidth) * 0.017);
+  font-size: min(34px, calc(var(--winWidth) * 0.34 * 0.08));
   text-align: right;
-  line-height: calc(var(--winWidth) * 0.03);
   border: 0;
 }
 
 
-
 :root {
-  --menuHeight: 70px;
+  --menuHeight: 60px;
+  --menuTitleFont: 34px;
+  --menuLiFont: 18px;
+  --menuBorder: 0px solid red;
 }
 
 #wrap #main {
@@ -147,15 +150,15 @@ body {
   float: left;
   margin-left: calc(var(--winWidth) * 0.02);
   line-height: var(--menuHeight);
-  border: 0;
+  border: var(--menuBorder);
 }
 
 #wrap #main #menu #title a {
   text-decoration: none;
-  font-size: 40px;
+  font-size: var(--menuTitleFont);
   font-family: 'Colonna';
   color: inherit;
-  border: 0;
+  border: var(--menuBorder);
 }
 
 #wrap #main #menu ul {
@@ -167,11 +170,11 @@ body {
 }
 
 #wrap #main #menu ul li {
-  font-size: 20px;
+  font-size: var(--menuLiFont);
   line-height: var(--menuHeight);
   margin-left: calc(var(--winWidth) * 0.02);
   display: inline-block;
-  border: 0;
+  border: var(--menuBorder);
 }
 
 #wrap #main #menu ul li a {
@@ -180,7 +183,12 @@ body {
   border: 0;
 }
 
+
 /* story */
+:root {
+  --storyPFont: min(22px, calc(var(--winWidth) * 0.22 * 0.08));
+}
+
 #wrap #main #story {
   position: relative;
   height: var(--winHeight);
@@ -190,7 +198,7 @@ body {
 
 #wrap #main #story .img {
   position: absolute;
-  top: calc(var(--winHeight) * 0.1);
+  top: calc(var(--menuHeight) + var(--winHeight) * 0.0);
   left: calc(var(--winWidth) * 0.05);
   width: calc(var(--winWidth) * 0.55);
   height: calc(var(--winHeight) * 0.8);
@@ -210,11 +218,15 @@ body {
   width: calc(var(--winWidth) * 0.33);
   bottom: calc(var(--winHeight) * 0.05);
   right: calc(var(--winWidth) * 0.05);
-  font-size: min(22px, calc(var(--winWidth) * 0.017));
+  font-size: var(--storyPFont);
   border: 0;
 }
 
 /* products */
+:root {
+  --productsPFont: min(22px, calc(var(--winWidth) * 0.22 * 0.08));
+}
+
 #wrap #main #products {
   opacity: 0;
   border: 0;
@@ -232,7 +244,7 @@ body {
 
 #wrap #main #products>div .product .img {
   position: absolute;
-  top: calc(var(--winHeight) * 0.1);
+  top: calc(var(--menuHeight) + var(--winHeight) * 0.0);
   left: calc(var(--winWidth) * 0.05);
   width: calc(var(--winWidth) * 0.55);
   height: calc(var(--winHeight) * 0.8);
@@ -252,7 +264,7 @@ body {
   width: calc(var(--winWidth) * 0.33);
   bottom: calc(var(--winHeight) * 0.05);
   right: calc(var(--winWidth) * 0.05);
-  font-size: min(22px, calc(var(--winWidth) * 0.017));
+  font-size: var(--productsPFont);
   border: 0;
 }
 
@@ -266,21 +278,57 @@ body {
   right: auto;
 }
 
+/* contact */
+:root {
+  --contacth2Font: min(22px, calc(var(--winWidth) * 0.22 * 0.08));
+  --contactPFont: min(18px, calc(var(--winWidth) * 0.18 * 0.08));
+}
+
 #wrap #main #contact {
   position: relative;
   height: var(--winHeight);
   border: 0;
 }
 
+#wrap #main #contact #contactList {
+  position: absolute;
+  width: calc(var(--winWidth) * 0.4);
+  top: calc(var(--menuHeight) + var(--winHeight) * 0.1);
+  right: calc(var(--winWidth) * 0.05);
+  border: 0;
+}
+
+#wrap #main #contact #contactList div {
+  border: 0;
+}
+
+#wrap #main #contact #contactList h2 {
+  font-size: var(--contacth2Font);
+  margin-top: 20px;
+  border: 0;
+}
+
+#wrap #main #contact #contactList p {
+  font-size: var(--contactPFont);
+  padding: 20px;
+  border: 0;
+}
+
 #wrap #main #contact #map {
   position: absolute;
-  width: calc(var(--winWidth) * 0.55);
+  width: calc(var(--winWidth) * 0.45);
   height: calc(var(--winHeight) * 0.7);
-  top: calc(var(--winHeight) * 0.2);
-  right: calc(var(--winWidth) * 0.05);
+  top: calc(var(--menuHeight) + var(--winHeight) * 0.1);
+  left: calc(var(--winWidth) * 0.05);
   border: 2px solid var(--mainColor);
 }
 
 #wrap #main #contact #map * {
   border: 0;
 }
+
+/* tablet 768px ~ 992px 1100px or */
+@media screen and (max-width: 1100px) {}
+
+/* mobile 0 ~ 768px */
+@media screen and (max-width: 768px) {}

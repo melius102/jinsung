@@ -117,7 +117,7 @@ function initThree() {
 
     // event handlers
     window.addEventListener('resize', function () {
-        console.log('hResize');
+        // console.log('hResize');
         // g_winWidth = $(window).width();
         // g_winHeight = $(window).height();
 
