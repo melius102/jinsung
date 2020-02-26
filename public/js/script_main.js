@@ -6,12 +6,49 @@ let g_subColor = '#EEEEEE'; //'#FFFFFF', '#FF0000';
 let g_winWidth;
 let g_winHeight;
 
+initialization();
+
+function initialization() {
+    log('initialization');
+
+    window.addEventListener("load", () => {
+        initThree();
+        hScroll2();
+        document.addEventListener('scroll', hScroll2, false);
+        hLoad2();
+        addMap();
+    });
+
+    window.addEventListener('resize', initCSS);
+
+    initCSS();
+    if (rdev) {
+        $("#intro").children().delay(100).fadeIn(500).delay(100).fadeIn(0, function () {
+            $("#intro").animate({
+                top: `-${g_winHeight}px`
+            }, 100).fadeOut(0, function () {
+                $('#wrap .down-arrow').delay(2000).fadeIn(1000);
+            });
+        });
+    } else {
+        $("#intro").children().delay(500).fadeIn(1000).delay(1000).fadeIn(0, function () {
+            $("#intro").animate({
+                top: `-${g_winHeight}px`
+            }, 1000).fadeOut(0, function () {
+                $('#wrap .down-arrow').delay(2000).fadeIn(1000);
+            });
+            location.href = '#front';
+        });
+    }
+}
+
 function initCSS() {
     // log("initCSS");
 
     g_winWidth = $(window).width();
     g_winHeight = $(window).height();
     // g_winHeight = $(window).outerHeight(); // for including hscroll & for address bar of mobile
+    console.log(g_winHeight);
 
     document.documentElement.style.setProperty('--winWidth', `${g_winWidth}px`);
     document.documentElement.style.setProperty('--winHeight', `${g_winHeight}px`);
@@ -22,36 +59,6 @@ function initCSS() {
     let divWidth = $("#story .img").width();
     $("#story .img img").css({ marginLeft: `${divWidth / 2 - imgWidth / 2}px` });
 }
-
-function introAni() {
-    log('introAni');
-    if (rdev) {
-        $("#intro").children().delay(100).fadeIn(500).delay(100).fadeIn(0, function () {
-            $("#intro").animate({
-                top: `-${g_winHeight}px`
-            }, 100).fadeOut();
-        });
-    } else {
-        $("#intro").children().delay(500).fadeIn(1000).delay(1000).fadeIn(0, function () {
-            $("#intro").animate({
-                top: `-${g_winHeight}px`
-            }, 1000).fadeOut();
-            location.href = '#front';
-        });
-    }
-}
-
-initCSS();
-introAni();
-
-window.addEventListener('resize', initCSS);
-window.addEventListener("load", () => {
-    initThree();
-    hScroll2();
-    document.addEventListener('scroll', hScroll2, false);
-    hLoad2();
-    addMap();
-});
 
 function hScroll2() {
     // log('hScroll2');

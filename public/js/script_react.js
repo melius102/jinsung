@@ -43,6 +43,6 @@ function hLoad2() {
         <Contact key={i} title={contactTitle[i]} content={contactContent[i]} />
     );
 
-    ReactDOM.render(<div>{products}</div>, $('#products')[0]);
+    ReactDOM.render(<div>{products}</div>, $('#productList')[0]);
     ReactDOM.render(<div>{contacts}</div>, $('#contactList')[0]);
 }
