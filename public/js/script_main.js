@@ -48,7 +48,7 @@ function initialization() {
         });
 
         $("html").click(function (evt) {
-            $("#gnb").stop().slideUp('fast');
+            $("#gnb.mobile").stop().slideUp('fast');
         });
 
         // go intro animation
@@ -83,6 +83,12 @@ function getWinSize() {
     let imgWidth = $("#story .img img").width();
     let divWidth = $("#story .img").width();
     $("#story .img img").css({ marginLeft: `${divWidth / 2 - imgWidth / 2}px` });
+
+    if (window.matchMedia("(max-width: 768px)").matches) {
+        $('#gnb').hide().addClass('mobile');
+    } else {
+        $('#gnb').show().removeClass('mobile');
+    }
 }
 
 function getScrollTop() {
