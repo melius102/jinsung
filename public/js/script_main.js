@@ -132,15 +132,19 @@ function addMap() {
     log('addMap');
     // 37.283185, 127.145192: lotte castle
 
-    let mapContainer = document.getElementById('map');
-    let mapOption = {
-        center: new kakao.maps.LatLng(37.283185, 127.145192), // coordinate of map's center
-        level: 3 // zoom
-    };
-    let map = new kakao.maps.Map(mapContainer, mapOption);
+    try {
+        let mapContainer = document.getElementById('map');
+        let mapOption = {
+            center: new kakao.maps.LatLng(37.283185, 127.145192), // coordinate of map's center
+            level: 3 // zoom
+        };
+        let map = new kakao.maps.Map(mapContainer, mapOption);
 
-    let marker = new kakao.maps.Marker({ position: new kakao.maps.LatLng(37.283185, 127.145192) });
-    marker.setMap(map);
+        let marker = new kakao.maps.Marker({ position: new kakao.maps.LatLng(37.283185, 127.145192) });
+        marker.setMap(map);
+    } catch (err) {
+        console.log(err);
+    }
 }
 
 function goIntroAni() {
