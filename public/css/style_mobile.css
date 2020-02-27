@@ -12,6 +12,10 @@
     font-size: max(calc(56px * 0.35), calc(var(--winWidth) * 0.56 * 0.08));
   }
 
+  #wrap #webgl-output {
+    display: none;
+  }
+
   #wrap #down-arrow {
     font-size: max(calc(56px * 0.7), calc(var(--winWidth) * 0.56 * 0.08));
     left: auto;
@@ -35,7 +39,7 @@
   :root {
     --menuHeight: calc(60px * 3/4);
     --menuTitleFont: calc(34px * 3/4);
-    --menuLiFont: calc(18px * 3/4);
+    --menuLiFont: calc(18px * 4/5);
     --menuBorder: 0px solid red;
     --menuHMg: 1px;
   }
@@ -136,7 +140,7 @@
     height: auto;
     padding-top: var(--menuHeight);
     border: 0;
-    
+
   }
 
   #wrap #main #contact #map {
@@ -150,7 +154,7 @@
 
   #wrap #main #contact #contact-list {
     position: static;
-    width: calc(var(--winWidth) * 0.94);
+    width: calc(var(--winWidth) * 0.84);
     margin: 30px auto 0;
   }
 

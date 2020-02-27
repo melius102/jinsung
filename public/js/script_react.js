@@ -45,7 +45,6 @@ class ArrowBtn extends React.Component {
         // log('constructor');
         super(props);
         this.state = {
-            scrlTop: this.props.scrlTop,
             visible: { up: 'visible', dn: 'visible' }
         };
 
@@ -55,34 +54,37 @@ class ArrowBtn extends React.Component {
 
     static getDerivedStateFromProps(props, state) {
         // log('getDerivedStateFromProps');
-        let scrlTop = props.scrlTop;
         let visible = { up: 'visible', dn: 'visible' };
 
-        if (scrlTop <= g_menuList[0]) visible.up = 'hidden';
-        else if (scrlTop >= g_menuList[g_menuList.length - 1]) visible.dn = 'hidden';
+        if (g_scrollTop <= g_menuList[0]) visible.up = 'hidden';
+        else if (g_scrollTop >= g_menuList[g_menuList.length - 1]) visible.dn = 'hidden';
 
-        return { scrlTop, visible };
+        if (state.visible.up !== visible.up || state.visible.dn !== visible.dn) {
+            return { visible };
+        } else {
+            return null;
+        }
     }
 
-    findItemNum(scrlTop) {
+    findItemNum() {
         let upNum = g_menuList.filter((v, i) => {
             if (i == 0) {
-                if (scrlTop <= g_menuList[i + 1]) return true;
+                if (g_scrollTop <= g_menuList[i + 1]) return true;
             } else if (i == g_menuList.length - 1) {
-                if (v < scrlTop) return true;
+                if (v < g_scrollTop) return true;
             } else {
-                if (v < scrlTop && scrlTop <= g_menuList[i + 1]) return true;
+                if (v < g_scrollTop && g_scrollTop <= g_menuList[i + 1]) return true;
             }
             return false;
         });
 
         let dnNum = g_menuList.filter((v, i) => {
             if (i == 0) {
-                if (v > scrlTop) return true;
+                if (v > g_scrollTop) return true;
             } else if (i == g_menuList.length - 1) {
-                if (scrlTop >= g_menuList[i - 1]) return true;
+                if (g_scrollTop >= g_menuList[i - 1]) return true;
             } else {
-                if (v > scrlTop && scrlTop >= g_menuList[i - 1]) return true;
+                if (v > g_scrollTop && g_scrollTop >= g_menuList[i - 1]) return true;
             }
             return false;
         });
@@ -91,19 +93,23 @@ class ArrowBtn extends React.Component {
     }
 
     clickUp(evt) {
-        // console.log('clickUp', this.state.scrlTop);
+        // log('clickUp', g_scrollTop);
         // story.scrollIntoView();
         // $(document).scrollTop(this.findItemNum(this.state.scrlTop, g_menuList).upTop);
         if ($('html').is(':animated') == false) {
-            $('html').stop().animate({ scrollTop: this.findItemNum(this.state.scrlTop).upTop }, 1500);
+            let scrollTop = this.findItemNum();
+            // log('scrollTop', scrollTop);
+            $('html').stop().animate({ scrollTop: scrollTop.upTop }, 1500);
         }
     }
 
     clickDn(evt) {
-        // console.log('clickDn', this.state.scrlTop);
+        // log('clickDn', g_scrollTop);
         // $(document).scrollTop(this.findItemNum(this.state.scrlTop, g_menuList).dnTop);
         if ($('html').is(':animated') == false) {
-            $('html').stop().animate({ scrollTop: this.findItemNum(this.state.scrlTop).dnTop }, 1500);
+            let scrollTop = this.findItemNum();
+            // log('scrollTop', scrollTop);
+            $('html').stop().animate({ scrollTop: scrollTop.dnTop }, 1500);
         }
     }
 
@@ -117,15 +123,16 @@ class ArrowBtn extends React.Component {
     }
 }
 
-function hLoad2() {
-    log('hLoad2');
+function reactComptLoad() {
+    log('reactComptLoad');
     document.addEventListener("productMounted", evt => {
+        getMenuListPos();
         arrowBtnUpdate();
     });
-    reactComptLoad();
+    reactComptRender();
 }
 
-function reactComptLoad() {
+function reactComptRender() {
     let products = [];
     for (let i = 0; i < dscrp.length; i++) {
         products.push(<Product key={i} index={dscrp.length - i} dscrp={dscrp[i]} imgSrc={imgSrc[i]} side={imgSide[i]} />);
@@ -139,12 +146,6 @@ function reactComptLoad() {
     ReactDOM.render(<div>{contacts}</div>, $('#contact-list')[0]);
 }
 
-let g_menuList = [];
 function arrowBtnUpdate() {
-    // log('arrowBtnUpdate');
-    $('.menu-item').each(function (i) {
-        g_menuList.push($(this).offset().top);
-    });
-
-    ReactDOM.render(<ArrowBtn scrlTop={$(document).scrollTop()} />, $('#down-arrow')[0]);
+    ReactDOM.render(<ArrowBtn />, $('#down-arrow')[0]);
 }

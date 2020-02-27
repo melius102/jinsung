@@ -31,7 +31,6 @@ function initThree() {
 
     g_mouse.x = g_winWidth / 2;
     g_mouse.y = g_winHeight / 2;
-    g_mouse.scrTop = $(document).scrollTop();
     g_mouse.scrMax = $("body").prop("scrollHeight") - g_winHeight;
 
     // scene
@@ -58,7 +57,7 @@ function initThree() {
     let fov_h = 30 * D2R;
     let fov_v_deg = 2 * atan(tan(fov_h / 2) * g_winHeight / g_winWidth) * R2D;
     let camera = new THREE.PerspectiveCamera(fov_v_deg, g_winWidth / g_winHeight, 0.1, fogFar);
-    camera.position.set(cameraX_o + cameraX_d * g_mouse.scrTop / g_mouse.scrMax, 0, 0);
+    camera.position.set(cameraX_o + cameraX_d * g_scrollTop / g_mouse.scrMax, 0, 0);
     camera.lookAt(scene.position);
 
     // renderer
@@ -98,10 +97,10 @@ function initThree() {
         let pos_o = TrajFilter(pos_i);
         icosahedron.position.y = icosahedronY_o + pos_o.x;
         icosahedron.position.z = icosahedronZ_o + pos_o.y;
-        camera.position.x = cameraX_o + cameraX_d * g_mouse.scrTop / g_mouse.scrMax;
+        camera.position.x = cameraX_o + cameraX_d * g_scrollTop / g_mouse.scrMax;
 
         // fog
-        scene.fog.far = max(0, fogFar * (1 - 1.5 * g_mouse.scrTop / g_winHeight));
+        scene.fog.far = max(0, fogFar * (1 - 1.5 * g_scrollTop / g_winHeight));
 
         requestAnimationFrame(renderScene);
         renderer.render(scene, camera);
@@ -131,18 +130,11 @@ function initThree() {
     }, false);
 
     document.addEventListener('mousemove', hMousemove, false);
-    document.addEventListener('scroll', hScroll1, false);
 }
 
 function hMousemove(e) {
     g_mouse.x = e.x;
     g_mouse.y = e.y;
-    g_mouse.scrTop = $(document).scrollTop();
-}
-
-function hScroll1() {
-    // log('hScroll1', $(window).innerHeight(), $(window).height(), $(window).outerHeight());
-    g_mouse.scrTop = $(document).scrollTop();
 }
 
 let pos_p = { x: 0, y: 0 };

@@ -51,6 +51,7 @@ body {
 
 #wrap {
   border: 0;
+  user-select: none;
   /* background-color: var(--subColor); cannot show three ... why? */
   /* font-size: 18px, 22px, 24px, 34px, 56px */
 }
