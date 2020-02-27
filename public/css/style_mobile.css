@@ -1,0 +1,45 @@
+/* tablet 768px ~ 992px 1100px or */
+@media screen and (max-width: 1100px) {}
+
+/* mobile 0 ~ 768px */
+@media screen and (max-width: 768px) {
+
+  /* menu */
+  :root {
+    --menuHeight: calc(60px * 3/4);
+    --menuTitleFont: calc(34px * 3/4);
+    --menuLiFont: calc(18px * 3/4);
+    --menuBorder: 0px solid red;
+    --menuHMg: 1px;
+  }
+
+  #wrap #main #menu #hamburger-btn {
+    float: right;
+    display: block;
+    cursor: pointer;
+    height: var(--menuHeight);
+    width: var(--menuHeight);
+    border: 0;
+  }
+
+  #wrap #main #menu #hamburger-btn span {
+    display: block;
+    border: var(--menuHMg) solid var(--mainColor);
+    width: calc(var(--menuHeight) * 0.7);
+    margin: calc((var(--menuHeight) - var(--menuHMg)*6)/4) auto;
+  }
+
+  #wrap #main #menu #gnb {
+    display: none;
+    position: absolute;
+    margin-right: 0;
+    top: calc(var(--menuHeight) + 1px);
+    right: 0;
+    background-color: var(--subColor2);
+  }
+
+  #wrap #main #menu #gnb li {
+    display: block;
+    text-align: right;
+  }
+}

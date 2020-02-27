@@ -46,7 +46,6 @@ class ArrowBtn extends React.Component {
         super(props);
         this.state = {
             scrlTop: this.props.scrlTop,
-            menuList: this.props.menuList,
             visible: { up: 'visible', dn: 'visible' }
         };
 
@@ -57,34 +56,33 @@ class ArrowBtn extends React.Component {
     static getDerivedStateFromProps(props, state) {
         // log('getDerivedStateFromProps');
         let scrlTop = props.scrlTop;
-        let menuList = props.menuList;
         let visible = { up: 'visible', dn: 'visible' };
 
-        if (scrlTop <= menuList[0]) visible.up = 'hidden';
-        else if (scrlTop >= menuList[menuList.length - 1]) visible.dn = 'hidden';
+        if (scrlTop <= g_menuList[0]) visible.up = 'hidden';
+        else if (scrlTop >= g_menuList[g_menuList.length - 1]) visible.dn = 'hidden';
 
-        return { scrlTop, menuList, visible };
+        return { scrlTop, visible };
     }
 
-    findItemNum(scrlTop, menuList) {
-        let upNum = menuList.filter((v, i) => {
+    findItemNum(scrlTop) {
+        let upNum = g_menuList.filter((v, i) => {
             if (i == 0) {
-                if (scrlTop <= menuList[i + 1]) return true;
-            } else if (i == menuList.length - 1) {
+                if (scrlTop <= g_menuList[i + 1]) return true;
+            } else if (i == g_menuList.length - 1) {
                 if (v < scrlTop) return true;
             } else {
-                if (v < scrlTop && scrlTop <= menuList[i + 1]) return true;
+                if (v < scrlTop && scrlTop <= g_menuList[i + 1]) return true;
             }
             return false;
         });
 
-        let dnNum = menuList.filter((v, i) => {
+        let dnNum = g_menuList.filter((v, i) => {
             if (i == 0) {
                 if (v > scrlTop) return true;
-            } else if (i == menuList.length - 1) {
-                if (scrlTop >= menuList[i - 1]) return true;
+            } else if (i == g_menuList.length - 1) {
+                if (scrlTop >= g_menuList[i - 1]) return true;
             } else {
-                if (v > scrlTop && scrlTop >= menuList[i - 1]) return true;
+                if (v > scrlTop && scrlTop >= g_menuList[i - 1]) return true;
             }
             return false;
         });
@@ -95,14 +93,18 @@ class ArrowBtn extends React.Component {
     clickUp(evt) {
         // console.log('clickUp', this.state.scrlTop);
         // story.scrollIntoView();
-        // $(document).scrollTop(this.findItemNum(this.state.scrlTop, this.state.menuList).upTop);
-        $('html').stop().animate({ scrollTop: this.findItemNum(this.state.scrlTop, this.state.menuList).upTop }, 1500);
+        // $(document).scrollTop(this.findItemNum(this.state.scrlTop, g_menuList).upTop);
+        if ($('html').is(':animated') == false) {
+            $('html').stop().animate({ scrollTop: this.findItemNum(this.state.scrlTop).upTop }, 1500);
+        }
     }
 
     clickDn(evt) {
         // console.log('clickDn', this.state.scrlTop);
-        // $(document).scrollTop(this.findItemNum(this.state.scrlTop, this.state.menuList).dnTop);
-        $('html').stop().animate({ scrollTop: this.findItemNum(this.state.scrlTop, this.state.menuList).dnTop }, 1500);
+        // $(document).scrollTop(this.findItemNum(this.state.scrlTop, g_menuList).dnTop);
+        if ($('html').is(':animated') == false) {
+            $('html').stop().animate({ scrollTop: this.findItemNum(this.state.scrlTop).dnTop }, 1500);
+        }
     }
 
     render() {
@@ -137,12 +139,12 @@ function reactComptLoad() {
     ReactDOM.render(<div>{contacts}</div>, $('#contact-list')[0]);
 }
 
+let g_menuList = [];
 function arrowBtnUpdate() {
     // log('arrowBtnUpdate');
-    let menuList = [];
     $('.menu-item').each(function (i) {
-        menuList.push($(this).offset().top);
+        g_menuList.push($(this).offset().top);
     });
 
-    ReactDOM.render(<ArrowBtn scrlTop={$(document).scrollTop()} menuList={menuList} />, $('#down-arrow')[0]);
+    ReactDOM.render(<ArrowBtn scrlTop={$(document).scrollTop()} />, $('#down-arrow')[0]);
 }

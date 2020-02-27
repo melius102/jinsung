@@ -2,7 +2,7 @@ const log = console.log;
 
 let rdev = 0;
 let g_mainColor = '#444242'; //'#444242', '#0000FF';
-let g_subColor = '#EEEEEE'; //'#FFFFFF', '#FF0000';
+let g_subColor = '#EEEEEE'; //'#EEEEEE', '#FF0000';
 let g_winWidth;
 let g_winHeight;
 
@@ -47,6 +47,10 @@ function initialization() {
             location.href = '#front';
         });
     }
+
+    $("#hamburger-btn").click(function () {
+        $("#gnb").stop().slideToggle('fast');
+    });
 }
 
 function initCSS() {
@@ -61,6 +65,7 @@ function initCSS() {
     document.documentElement.style.setProperty('--winHeight', `${g_winHeight}px`);
     document.documentElement.style.setProperty('--mainColor', g_mainColor);
     document.documentElement.style.setProperty('--subColor', g_subColor);
+    document.documentElement.style.setProperty('--subColor2', g_subColor + 'CC');
 
     let imgWidth = $("#story .img img").width();
     let divWidth = $("#story .img").width();

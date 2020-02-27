@@ -12,6 +12,7 @@
   --winHeight: 100vh;
   --mainColor: #444242;
   --subColor: #EEEEEE;
+  --subColor2: #EEEEEECC;
 }
 
 .clearfix::after {
@@ -176,8 +177,10 @@ body {
 #wrap #main #menu #title {
   float: left;
   margin-left: calc(var(--winWidth) * 0.02);
-  line-height: var(--menuHeight);
   border: var(--menuBorder);
+  /* line-height: var(--menuHeight); */
+  display: flex;
+  height: var(--menuHeight);
 }
 
 #wrap #main #menu #title a {
@@ -186,9 +189,14 @@ body {
   font-family: 'Colonna';
   color: inherit;
   border: var(--menuBorder);
+  margin: auto;
 }
 
-#wrap #main #menu ul {
+#wrap #main #hamburger-btn {
+  display: none;
+}
+
+#wrap #main #menu #gnb {
   float: right;
   list-style-type: none;
   font-size: 0;
@@ -196,7 +204,7 @@ body {
   border: 0;
 }
 
-#wrap #main #menu ul li {
+#wrap #main #menu #gnb li {
   font-size: var(--menuLiFont);
   line-height: var(--menuHeight);
   margin-left: calc(var(--winWidth) * 0.02);
@@ -204,7 +212,7 @@ body {
   border: var(--menuBorder);
 }
 
-#wrap #main #menu ul li a {
+#wrap #main #menu #gnb li a {
   text-decoration: none;
   color: inherit;
   border: 0;
@@ -360,9 +368,3 @@ body {
 #wrap #main #contact #map * {
   border: 0;
 }
-
-/* tablet 768px ~ 992px 1100px or */
-@media screen and (max-width: 1100px) {}
-
-/* mobile 0 ~ 768px */
-@media screen and (max-width: 768px) {}

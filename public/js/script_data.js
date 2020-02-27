@@ -36,12 +36,7 @@ let dscrp = [
 이남에서만 유일한 합법 정부라는 주장도 있다.`
 ];
 
-let imgSrc = [
-    "https://www.cstylejeans.com/wp-content/uploads/2016/02/fashion-socks-for-boots.jpg",
-    "https://www.futurekorea.co.kr/news/photo/202002/129057_131320_3020.jpg",
-    "https://cdn.shopify.com/s/files/1/0808/8989/products/BandoLee_large.png",
-    "https://www.bmmagazine.co.uk/wp-content/uploads/2015/07/trade1-e1437998920128.jpg"
-];
+let imgSrc = ["img/socks.jpg", "img/cosmetics.jpg", "img/mask.png", "img/trading.jpg"];
 
 let imgSide = ['right', 'left', 'left', 'right'];
 
