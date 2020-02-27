@@ -18,8 +18,8 @@ class Product extends React.Component {
         if (this.props.side == 'right') className += ` ${this.props.side}`;
         return (
             <div className={className}>
-                <p>{this.props.dscrp}</p>
                 <div className="img"><img src={this.props.imgSrc} /></div>
+                <p>{this.props.dscrp}</p>
             </div>
         );
     }

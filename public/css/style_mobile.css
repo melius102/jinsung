@@ -4,6 +4,33 @@
 /* mobile 0 ~ 768px */
 @media screen and (max-width: 768px) {
 
+  #wrap #intro>div {
+    font-size: max(calc(34px * 0.35), calc(var(--winWidth) * 0.34 * 0.08));
+  }
+
+  #wrap #intro>div span {
+    font-size: max(calc(56px * 0.35), calc(var(--winWidth) * 0.56 * 0.08));
+  }
+
+  #wrap #down-arrow {
+    font-size: max(calc(56px * 0.7), calc(var(--winWidth) * 0.56 * 0.08));
+    left: auto;
+    right: calc(var(--winWidth) * 0.05);
+  }
+
+  #wrap #front h1 {
+    top: calc(var(--winHeight) * 0.13);
+    font-size: max(calc(90px * 0.45), calc(var(--winWidth) * 0.90 * 0.08));
+  }
+
+  #wrap #front p {
+    width: calc(var(--winWidth) * 0.76);
+    bottom: calc(var(--winHeight) * 0.15);
+    right: calc(var(--winWidth) * 0.120);
+    font-size: max(calc(34px * 0.5), calc(var(--winWidth) * 0.34 * 0.08));
+    text-align: center;
+  }
+
   /* menu */
   :root {
     --menuHeight: calc(60px * 3/4);
@@ -41,5 +68,101 @@
   #wrap #main #menu #gnb li {
     display: block;
     text-align: right;
+  }
+
+  /* story */
+  :root {
+    --storyPFont: max(calc(22px * 0.7), calc(var(--winWidth) * 0.22 * 0.08));
+  }
+
+  #wrap #main #story {
+    position: static;
+    /* height: var(--winHeight); */
+    height: auto;
+  }
+
+  #wrap #main #story .img {
+    position: static;
+    width: calc(var(--winWidth) * 0.94);
+    height: calc(var(--winHeight) * 0.5);
+    padding-top: var(--menuHeight);
+    margin: 0 auto;
+  }
+
+  #wrap #main #story p {
+    position: static;
+    width: calc(var(--winWidth) * 0.94);
+    font-size: var(--storyPFont);
+    margin: 20px auto 0;
+  }
+
+  /* products */
+  :root {
+    --productsPFont: max(calc(22px * 0.7), calc(var(--winWidth) * 0.22 * 0.08));
+  }
+
+  #wrap #main #products {
+    position: static;
+  }
+
+  #wrap #main #products #product-list>div .product {
+    position: static;
+    height: auto;
+  }
+
+  #wrap #main #products #product-list>div .product .img {
+    position: static;
+    width: calc(var(--winWidth) * 0.94);
+    height: calc(var(--winHeight) * 0.5);
+    padding-top: var(--menuHeight);
+    margin: 0 auto;
+  }
+
+  #wrap #main #products #product-list>div .product p {
+    position: static;
+    width: calc(var(--winWidth) * 0.94);
+    font-size: var(--productsPFont);
+    margin: 20px auto 0;
+  }
+
+  /* contact */
+  :root {
+    --contacth2Font: max(calc(22px*0.8), calc(var(--winWidth) * 0.22 * 0.08));
+    --contactPFont: max(calc(18px*0.8), calc(var(--winWidth) * 0.18 * 0.08));
+  }
+
+  #wrap #main #contact {
+    position: static;
+    height: auto;
+    padding-top: var(--menuHeight);
+    border: 0;
+    
+  }
+
+  #wrap #main #contact #map {
+    position: static;
+    width: calc(var(--winWidth) * 0.94);
+    height: calc(var(--winHeight) * 0.5);
+    top: auto;
+    left: auto;
+    margin: 0 auto 20px;
+  }
+
+  #wrap #main #contact #contact-list {
+    position: static;
+    width: calc(var(--winWidth) * 0.94);
+    margin: 30px auto 0;
+  }
+
+  #wrap #main #contact #contact-list h2 {
+    font-size: var(--contacth2Font);
+    margin-top: 10px;
+    border: 0;
+  }
+
+  #wrap #main #contact #contact-list p {
+    font-size: var(--contactPFont);
+    padding: 20px;
+    border: 0;
   }
 }
