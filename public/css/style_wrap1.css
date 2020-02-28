@@ -16,7 +16,6 @@
     border-bottom: 1px solid var(--mainColor);
 }
 
-
 #wrap1 #menu1 #title1 {
     float: left;
     margin-left: calc(var(--winWidth) * 0.02);
@@ -60,6 +59,24 @@
     border: 0;
 }
 
+#wrap1 #menu1 #gnb1 li span {
+    color: inherit;
+    border: 0;
+}
+
+#wrap1 #menu1 #gnb1 #sign-out,
+#wrap1 #menu1 #gnb1 #login-username,
+#wrap1 #menu1.logged-in-menu #gnb1 #sign-in,
+#wrap1 #menu1.logged-in-menu #gnb1 #sign-up {
+    display: none;
+}
+
+#wrap1 #menu1.logged-in-menu #gnb1 #sign-out,
+#wrap1 #menu1.logged-in-menu #gnb1 #login-username {
+    display: initial;
+}
+
+
 /* sign-form */
 :root {
     --signFormW: calc(var(--winWidth) * 0.5);
@@ -69,15 +86,48 @@
 #wrap1 #sign-form {
     position: fixed;
     width: var(--signFormW);
-    height: var(--signFormH);
     top: 50%;
     left: 50%;
     margin-top: calc(var(--signFormH)/-2);
     margin-left: calc(var(--signFormW)/-2);
     display: none;
+    border: 1px solid var(--mainColor);
+}
+
+#wrap1 #sign-form>div {
+    border: 0;
+    padding: 40px;
 }
 
 #wrap1 #sign-form input {
     display: block;
-    /* width: auto; */
+    margin: 10px auto;
+    margin-top: 20px;
+    border: 0;
+    border-bottom: 1px solid var(--mainColor);
+    background-color: transparent;
+}
+
+#wrap1 #sign-form .btns {
+    text-align: center;
+    border: 0;
+}
+
+#wrap1 #sign-form .btns button {
+    margin: 10px;
+    margin-top: 25px;
+    padding: 10px;
+    color: var(--subColor);
+    background-color: var(--mainColor);
+    border: 1px solid var(--mainColor);
+}
+
+#wrap1 #sign-form .btns #fb-sign-in,
+#wrap1 #sign-form .sing-in-form .btns #fb-sign-up,
+#wrap1 #sign-form .sing-in-form input#username {
+    display: none;
+}
+
+#wrap1 #sign-form .sing-in-form .btns #fb-sign-in {
+    display: initial;
 }
