@@ -149,3 +149,11 @@ function reactComptRender() {
 function arrowBtnUpdate() {
     ReactDOM.render(<ArrowBtn />, $('#down-arrow')[0]);
 }
+
+g_reactLoaded = true;
+if (g_onLoad) {
+    log('react loaded late.')
+    reactComptLoad();
+    addMap();
+    setOpacity();
+}

@@ -10,18 +10,25 @@ let g_scrollTop = 0;
 let g_menuList = [];
 let g_menuPose = {};
 
+let g_reactLoaded = false;
+let g_onLoad = false;
+
 initialization();
 
 function initialization() {
     log('initialization');
 
     window.addEventListener("load", () => {
+        g_onLoad = true;
         getWinSize();
         getScrollTop();
         if (!isMobile()) initThree();
-        reactComptLoad();
-        addMap();
-        setOpacity();
+        if (g_reactLoaded) {
+            log('react loaded normally.')
+            reactComptLoad();
+            addMap();
+            setOpacity();
+        }
 
         // event handler
         document.addEventListener('scroll', () => {
