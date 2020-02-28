@@ -6,12 +6,12 @@
     --storyPFont: max(calc(26px * 0.7), calc(var(--winWidth) * 0.22 * 0.08));
   }
 
-  #wrap #main #story .img {
+  #wrap0 #main #story .img {
     width: calc(var(--winWidth) * 0.45);
     height: calc(var(--winHeight) * 0.7);
   }
 
-  #wrap #main #story p {
+  #wrap0 #main #story p {
     width: calc(var(--winWidth) * 0.43);
   }
 
@@ -20,12 +20,12 @@
     --productsPFont: max(calc(26px * 0.7), calc(var(--winWidth) * 0.22 * 0.08));
   }
 
-  #wrap #main #products #product-list>div .product .img {
+  #wrap0 #main #products #product-list>div .product .img {
     width: calc(var(--winWidth) * 0.45);
     height: calc(var(--winHeight) * 0.7);
   }
 
-  #wrap #main #products #product-list>div .product p {
+  #wrap0 #main #products #product-list>div .product p {
     width: calc(var(--winWidth) * 0.43);
   }
 
@@ -35,13 +35,13 @@
     --contactPFont: max(calc(18px * 0.8), calc(var(--winWidth) * 0.18 * 0.08));
   }
 
-  #wrap #main #contact {
+  #wrap0 #main #contact {
     position: relative;
     height: var(--winHeight);
     border: 0;
   }
 
-  #wrap #main #contact #map {
+  #wrap0 #main #contact #map {
     position: absolute;
     width: calc(var(--winWidth) * 0.45);
     height: calc(var(--winHeight) * 0.7);
@@ -50,11 +50,11 @@
     border: 2px solid var(--mainColor);
   }
 
-  #wrap #main #contact #map * {
+  #wrap0 #main #contact #map * {
     border: 0;
   }
 
-  #wrap #main #contact #contact-list {
+  #wrap0 #main #contact #contact-list {
     position: absolute;
     width: calc(var(--winWidth) * 0.4);
     top: calc(var(--menuHeight) + var(--winHeight) * 0.1);
@@ -62,13 +62,13 @@
     border: 0;
   }
 
-  #wrap #main #contact #contact-list h2 {
+  #wrap0 #main #contact #contact-list h2 {
     font-size: var(--contacth2Font);
     margin-top: 20px;
     border: 0;
   }
 
-  #wrap #main #contact #contact-list p {
+  #wrap0 #main #contact #contact-list p {
     font-size: var(--contactPFont);
     padding: 20px;
     border: 0;
@@ -78,30 +78,30 @@
 /* mobile 0 ~ 768px */
 @media screen and (max-width: 768px) {
 
-  #wrap #intro>div {
+  #wrap0 #intro>div {
     font-size: max(calc(34px * 0.35), calc(var(--winWidth) * 0.34 * 0.08));
   }
 
-  #wrap #intro>div span {
+  #wrap0 #intro>div span {
     font-size: max(calc(56px * 0.35), calc(var(--winWidth) * 0.56 * 0.08));
   }
 
-  #wrap #webgl-output {
+  #wrap0 #webgl-output {
     display: none;
   }
 
-  #wrap #down-arrow {
+  #wrap0 #down-arrow {
     font-size: max(calc(56px * 0.7), calc(var(--winWidth) * 0.56 * 0.08));
     left: auto;
     right: calc(var(--winWidth) * 0.05);
   }
 
-  #wrap #front h1 {
+  #wrap0 #front h1 {
     top: calc(var(--winHeight) * 0.13);
     font-size: max(calc(90px * 0.45), calc(var(--winWidth) * 0.90 * 0.08));
   }
 
-  #wrap #front p {
+  #wrap0 #front p {
     width: calc(var(--winWidth) * 0.76);
     bottom: calc(var(--winHeight) * 0.15);
     right: calc(var(--winWidth) * 0.120);
@@ -118,7 +118,7 @@
     --menuHMg: 1px;
   }
 
-  #wrap #main #menu #hamburger-btn {
+  #wrap0 #main #menu #hamburger-btn {
     float: right;
     display: block;
     cursor: pointer;
@@ -127,14 +127,14 @@
     border: 0;
   }
 
-  #wrap #main #menu #hamburger-btn span {
+  #wrap0 #main #menu #hamburger-btn span {
     display: block;
     border: var(--menuHMg) solid var(--mainColor);
     width: calc(var(--menuHeight) * 0.7);
     margin: calc((var(--menuHeight) - var(--menuHMg)*6)/4) auto;
   }
 
-  #wrap #main #menu #gnb {
+  #wrap0 #main #menu #gnb {
     display: none;
     position: absolute;
     margin-right: 0;
@@ -143,7 +143,7 @@
     background-color: var(--subColor2);
   }
 
-  #wrap #main #menu #gnb li {
+  #wrap0 #main #menu #gnb li {
     display: block;
     text-align: right;
   }
@@ -153,13 +153,13 @@
     --storyPFont: max(calc(22px * 0.7), calc(var(--winWidth) * 0.22 * 0.08));
   }
 
-  #wrap #main #story {
+  #wrap0 #main #story {
     position: static;
     /* height: var(--winHeight); */
     height: auto;
   }
 
-  #wrap #main #story .img {
+  #wrap0 #main #story .img {
     position: static;
     width: calc(var(--winWidth) * 0.94);
     height: calc(var(--winHeight) * 0.5);
@@ -167,7 +167,7 @@
     margin: 0 auto;
   }
 
-  #wrap #main #story p {
+  #wrap0 #main #story p {
     position: static;
     width: calc(var(--winWidth) * 0.94);
     font-size: var(--storyPFont);
@@ -179,16 +179,16 @@
     --productsPFont: max(calc(22px * 0.7), calc(var(--winWidth) * 0.22 * 0.08));
   }
 
-  #wrap #main #products {
+  #wrap0 #main #products {
     position: static;
   }
 
-  #wrap #main #products #product-list>div .product {
+  #wrap0 #main #products #product-list>div .product {
     position: static;
     height: auto;
   }
 
-  #wrap #main #products #product-list>div .product .img {
+  #wrap0 #main #products #product-list>div .product .img {
     position: static;
     width: calc(var(--winWidth) * 0.94);
     height: calc(var(--winHeight) * 0.5);
@@ -196,7 +196,7 @@
     margin: 0 auto;
   }
 
-  #wrap #main #products #product-list>div .product p {
+  #wrap0 #main #products #product-list>div .product p {
     position: static;
     width: calc(var(--winWidth) * 0.94);
     font-size: var(--productsPFont);
@@ -209,7 +209,7 @@
     --contactPFont: max(calc(18px*0.8), calc(var(--winWidth) * 0.18 * 0.08));
   }
 
-  #wrap #main #contact {
+  #wrap0 #main #contact {
     position: static;
     height: auto;
     padding-top: var(--menuHeight);
@@ -217,7 +217,7 @@
 
   }
 
-  #wrap #main #contact #map {
+  #wrap0 #main #contact #map {
     position: static;
     width: calc(var(--winWidth) * 0.94);
     height: calc(var(--winHeight) * 0.5);
@@ -226,19 +226,19 @@
     margin: 0 auto 20px;
   }
 
-  #wrap #main #contact #contact-list {
+  #wrap0 #main #contact #contact-list {
     position: static;
     width: calc(var(--winWidth) * 0.84);
     margin: 30px auto 0;
   }
 
-  #wrap #main #contact #contact-list h2 {
+  #wrap0 #main #contact #contact-list h2 {
     font-size: var(--contacth2Font);
     margin-top: 10px;
     border: 0;
   }
 
-  #wrap #main #contact #contact-list p {
+  #wrap0 #main #contact #contact-list p {
     font-size: var(--contactPFont);
     padding: 20px;
     border: 0;

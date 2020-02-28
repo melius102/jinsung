@@ -7,6 +7,7 @@
     <title>JINSUNG inc.</title>
     <link rel="shortcut icon" href="/img/favicon.ico">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style_wrap1.css">
     <link rel="stylesheet" href="css/style_mobile.css">
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -26,7 +27,7 @@
 </head>
 
 <body>
-    <div id="wrap">
+    <div id="wrap0">
         <div id="intro">
             <div><span>JINSUNG</span> - 대한민국은 민주공화국이다.</div>
         </div>
@@ -50,7 +51,7 @@
                 <ul id="gnb">
                     <li><a href="#story">회사소개</a></li>
                     <li><a href="#products">사업분야</a></li>
-                    <li><a href="#products">온라인샵</a></li>
+                    <li><a id="oline-shop" href="javascript:;">온라인샵</a></li>
                     <li><a href="#contact">연락처 및 오시는 길</a></li>
                 </ul>
             </div>
@@ -76,10 +77,33 @@
             </div>
         </div>
     </div>
+    <div id="wrap1">
+        <div id="menu1" class="clearfix">
+            <div id="title1"><a href="javascript:;">JINSUNG inc.</a></div>
+            <div id="hamburger-btn1">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul id="gnb1">
+                <li><a id="sign-in" href="javascript:;">로그인</a></li>
+                <li><a id="sign-up" href="javascript:;">회원가입</a></li>
+                <li><a id="goto-main" href="javascript:;">메인화면</a></li>
+            </ul>
+        </div>
+        <div id="sign-form"></div>
+        <div>TEST for Firebase SDK</div>
+        <div id="fbtest"></div>
+    </div>
     <script src="js/script_main.js"></script>
     <script src="js/script_three.js"></script>
     <script src="js/script_data.js"></script>
     <script type="text/babel" src="js/script_react.js"></script>
+
+    <script src="/__/firebase/6.2.0/firebase-app.js"></script>
+    <script src="/__/firebase/6.2.0/firebase-auth.js"></script>
+    <script src="/__/firebase/init.js"></script>
+    <script type="text/babel" src="js/script_firebase.js"></script>
 </body>
 
 </html>

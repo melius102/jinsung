@@ -1,0 +1,83 @@
+#wrap1 {
+    width: 100%;
+    user-select: none;
+    display: none;
+    border: 0;
+    height: 1000px;
+}
+
+#wrap1 #menu1 {
+    position: sticky;
+    top: 0;
+    width: calc(var(--winWidth) * 0.94);
+    margin: 0 auto;
+    background-color: var(--subColor);
+    border: 0;
+    border-bottom: 1px solid var(--mainColor);
+}
+
+
+#wrap1 #menu1 #title1 {
+    float: left;
+    margin-left: calc(var(--winWidth) * 0.02);
+    border: var(--menuBorder);
+    display: flex;
+    height: var(--menuHeight);
+}
+
+#wrap1 #menu1 #title1 a {
+    text-decoration: none;
+    font-size: var(--menuTitleFont);
+    font-family: 'Colonna';
+    color: inherit;
+    border: var(--menuBorder);
+    margin: auto;
+}
+
+#wrap1 #hamburger-btn1 {
+    display: none;
+}
+
+#wrap1 #menu1 #gnb1 {
+    float: right;
+    list-style-type: none;
+    font-size: 0;
+    margin-right: calc(var(--winWidth) * 0.02);
+    border: 0;
+}
+
+#wrap1 #menu1 #gnb1 li {
+    font-size: var(--menuLiFont);
+    line-height: var(--menuHeight);
+    margin-left: calc(var(--winWidth) * 0.02);
+    display: inline-block;
+    border: var(--menuBorder);
+}
+
+#wrap1 #menu1 #gnb1 li a {
+    text-decoration: none;
+    color: inherit;
+    border: 0;
+}
+
+/* sign-form */
+:root {
+    --signFormW: calc(var(--winWidth) * 0.5);
+    --signFormH: calc(var(--winHeight) * 0.5);
+}
+
+#wrap1 #sign-form {
+    position: fixed;
+    width: var(--signFormW);
+    height: var(--signFormH);
+    top: 50%;
+    left: 50%;
+    margin-top: calc(var(--signFormH)/-2);
+    margin-left: calc(var(--signFormW)/-2);
+    display: none;
+}
+
+#wrap1 #sign-form input {
+    display: block;
+    /* width: auto; */
+}

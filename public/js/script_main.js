@@ -60,6 +60,7 @@ function initialization() {
 
         // go intro animation
         goIntroAni();
+        loadFBSDK();
     });
 }
 
@@ -156,19 +157,21 @@ function addMap() {
 
 function goIntroAni() {
     if (rdev) {
-        $("#intro").children().delay(100).fadeIn(500).delay(100).fadeIn(0, function () {
+        $("#intro").children().delay(100).fadeIn(100).delay(100).fadeIn(0, function () {
             $("#intro").animate({
                 top: `-${g_winHeight}px`
             }, 100).fadeOut(0, function () {
-                $('#wrap #down-arrow').delay(500).fadeIn(1000);
+                $('#wrap0 #down-arrow').delay(100).fadeIn(100);
+                $('#oline-shop').trigger('click');
             });
+            location.href = '#story';
         });
     } else {
         $("#intro").children().delay(500).fadeIn(1000).delay(1000).fadeIn(0, function () {
             $("#intro").animate({
                 top: `-${g_winHeight}px`
             }, 1000).fadeOut(0, function () {
-                $('#wrap #down-arrow').delay(500).fadeIn(1000);
+                $('#wrap0 #down-arrow').delay(500).fadeIn(1000);
             });
             location.href = '#front';
         });
