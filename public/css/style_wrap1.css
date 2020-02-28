@@ -95,8 +95,9 @@
 }
 
 #wrap1 #sign-form>div {
-    border: 0;
     padding: 40px;
+    text-align: center;
+    border: 0;
 }
 
 #wrap1 #sign-form input {
@@ -116,7 +117,7 @@
 #wrap1 #sign-form .btns button {
     margin: 10px;
     margin-top: 25px;
-    padding: 10px;
+    padding: 10px 20px;
     color: var(--subColor);
     background-color: var(--mainColor);
     border: 0;
@@ -126,12 +127,22 @@
     background-color: var(--mainColor2);
 }
 
+#wrap1 #sign-form #fb-password-reset {
+    margin-top: 10px;
+    border: 0;
+}
+
 #wrap1 #sign-form .btns #fb-sign-in,
 #wrap1 #sign-form .sing-in-form .btns #fb-sign-up,
-#wrap1 #sign-form .sing-in-form input#username {
+#wrap1 #sign-form .sing-in-form input#username,
+#wrap1 #sign-form #fb-password-reset {
     display: none;
 }
 
 #wrap1 #sign-form .sing-in-form .btns #fb-sign-in {
     display: initial;
+}
+
+#wrap1 #sign-form .sing-in-form #fb-password-reset {
+    display: inline-block;
 }
