@@ -1,6 +1,6 @@
 const log = console.log;
 
-let rdev = 0;
+let rdev = 1;
 let g_mainColor = '#444242'; //'#444242', '#0000FF';
 let g_subColor = '#EEEEEE'; //'#EEEEEE', '#FF0000';
 let g_winWidth;
@@ -85,6 +85,7 @@ function getWinSize() {
     document.documentElement.style.setProperty('--winWidth', `${g_winWidth}px`);
     document.documentElement.style.setProperty('--winHeight', `${g_winHeight}px`);
     document.documentElement.style.setProperty('--mainColor', g_mainColor);
+    document.documentElement.style.setProperty('--mainColor2', g_mainColor + 'CC');
     document.documentElement.style.setProperty('--subColor', g_subColor);
     document.documentElement.style.setProperty('--subColor2', g_subColor + 'CC');
 
