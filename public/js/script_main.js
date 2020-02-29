@@ -1,6 +1,6 @@
 const log = console.log;
+const rdev = 0;
 
-let rdev = 1;
 let g_mainColor = '#444242'; //'#444242', '#0000FF';
 let g_subColor = '#EEEEEE'; //'#EEEEEE', '#FF0000';
 let g_winWidth;

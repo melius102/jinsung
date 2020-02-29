@@ -140,7 +140,7 @@ function reactComptRender() {
     ReactDOM.render(<div>{products}</div>, $('#product-list')[0]);
 
     let contacts = [];
-    for (let i = 0; i < dscrp.length; i++) contacts.push(
+    for (let i = 0; i < contactTitle.length; i++) contacts.push(
         <Contact key={i} title={contactTitle[i]} content={contactContent[i]} />
     );
     ReactDOM.render(<div>{contacts}</div>, $('#contact-list')[0]);
