@@ -11,6 +11,7 @@ let g_menuList = [];
 let g_menuPose = {};
 
 let g_reactLoaded = false;
+let g_firebaseLoaded = false;
 let g_onLoad = false;
 
 initialization();
@@ -60,7 +61,9 @@ function initialization() {
 
         // go intro animation
         goIntroAni();
-        loadFBSDK();
+        if (g_firebaseLoaded) {
+            loadFBSDK();
+        }
     });
 }
 
