@@ -46,17 +46,17 @@ function initialization() {
             setOpacity();
         });
 
-        $("#hamburger-btn").click(function (evt) {
-            $("#gnb").stop().slideToggle('fast');
+        $('.hamburger-btn').click(function (evt) {
+            $('.gnb').stop().slideToggle('fast');
             evt.stopPropagation();
         });
 
-        $("#gnb li").click(function (evt) {
+        $('.gnb li').click(function (evt) {
             evt.stopPropagation();
         });
 
         $("html").click(function (evt) {
-            $("#gnb.mobile").stop().slideUp('fast');
+            $('.gnb.mobile').stop().slideUp('fast');
         });
 
         // go intro animation
@@ -97,9 +97,9 @@ function getWinSize() {
     $("#story .img img").css({ marginLeft: `${divWidth / 2 - imgWidth / 2}px` });
 
     if (window.matchMedia("(max-width: 768px)").matches) {
-        $('#gnb').hide().addClass('mobile');
+        $('.gnb').hide().addClass('mobile');
     } else {
-        $('#gnb').show().removeClass('mobile');
+        $('.gnb').show().removeClass('mobile');
     }
 }
 

@@ -3,7 +3,7 @@
 
 /* mobile 0 ~ 768px */
 @media screen and (max-width: 768px) {
-  #wrap1 #menu1 #hamburger-btn1 {
+  #wrap1 #menu1 .hamburger-btn {
     float: right;
     display: block;
     cursor: pointer;
@@ -12,14 +12,14 @@
     border: 0;
   }
 
-  #wrap1 #menu1 #hamburger-btn1 span {
+  #wrap1 #menu1 .hamburger-btn span {
     display: block;
     border: var(--menuHMg) solid var(--mainColor);
     width: calc(var(--menuHeight) * 0.7);
     margin: calc((var(--menuHeight) - var(--menuHMg)*6)/4) auto;
   }
 
-  #wrap1 #menu1 #gnb1 {
+  #wrap1 #menu1 .gnb {
     display: none;
     position: absolute;
     margin-right: 0;
@@ -28,7 +28,7 @@
     background-color: var(--subColor2);
   }
 
-  #wrap1 #menu1 #gnb1 li {
+  #wrap1 #menu1 .gnb li {
     display: block;
     text-align: right;
   }

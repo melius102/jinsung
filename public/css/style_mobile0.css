@@ -118,7 +118,7 @@
     --menuHMg: 1px;
   }
 
-  #wrap0 #main #menu #hamburger-btn {
+  #wrap0 #main #menu .hamburger-btn {
     float: right;
     display: block;
     cursor: pointer;
@@ -127,14 +127,14 @@
     border: 0;
   }
 
-  #wrap0 #main #menu #hamburger-btn span {
+  #wrap0 #main #menu .hamburger-btn span {
     display: block;
     border: var(--menuHMg) solid var(--mainColor);
     width: calc(var(--menuHeight) * 0.7);
     margin: calc((var(--menuHeight) - var(--menuHMg)*6)/4) auto;
   }
 
-  #wrap0 #main #menu #gnb {
+  #wrap0 #main #menu .gnb {
     display: none;
     position: absolute;
     margin-right: 0;
@@ -143,7 +143,7 @@
     background-color: var(--subColor2);
   }
 
-  #wrap0 #main #menu #gnb li {
+  #wrap0 #main #menu .gnb li {
     display: block;
     text-align: right;
   }

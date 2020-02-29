@@ -33,11 +33,11 @@
     margin: auto;
 }
 
-#wrap1 #hamburger-btn1 {
+#wrap1 .hamburger-btn {
     display: none;
 }
 
-#wrap1 #menu1 #gnb1 {
+#wrap1 #menu1 .gnb {
     float: right;
     list-style-type: none;
     font-size: 0;
@@ -45,7 +45,7 @@
     border: 0;
 }
 
-#wrap1 #menu1 #gnb1 li {
+#wrap1 #menu1 .gnb li {
     font-size: var(--menuLiFont);
     line-height: var(--menuHeight);
     margin-left: calc(var(--winWidth) * 0.02);
@@ -53,26 +53,28 @@
     border: var(--menuBorder);
 }
 
-#wrap1 #menu1 #gnb1 li a {
+#wrap1 #menu1 .gnb li a {
     text-decoration: none;
     color: inherit;
     border: 0;
 }
 
-#wrap1 #menu1 #gnb1 li span {
+#wrap1 #menu1 .gnb li span {
     color: inherit;
     border: 0;
 }
 
-#wrap1 #menu1 #gnb1 #sign-out,
-#wrap1 #menu1 #gnb1 #login-username,
-#wrap1 #menu1.logged-in-menu #gnb1 #sign-in,
-#wrap1 #menu1.logged-in-menu #gnb1 #sign-up {
+#wrap1 #menu1 .gnb #sign-out,
+#wrap1 #menu1 .gnb #del-account,
+#wrap1 #menu1 .gnb #login-username,
+#wrap1 #menu1.logged-in-menu .gnb #sign-in,
+#wrap1 #menu1.logged-in-menu .gnb #sign-up {
     display: none;
 }
 
-#wrap1 #menu1.logged-in-menu #gnb1 #sign-out,
-#wrap1 #menu1.logged-in-menu #gnb1 #login-username {
+#wrap1 #menu1.logged-in-menu .gnb #sign-out,
+#wrap1 #menu1.logged-in-menu .gnb #del-account,
+#wrap1 #menu1.logged-in-menu .gnb #login-username {
     display: initial;
 }
 

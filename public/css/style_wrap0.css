@@ -197,11 +197,11 @@ body {
   margin: auto;
 }
 
-#wrap0 #main #hamburger-btn {
+#wrap0 #main .hamburger-btn {
   display: none;
 }
 
-#wrap0 #main #menu #gnb {
+#wrap0 #main #menu .gnb {
   float: right;
   list-style-type: none;
   font-size: 0;
@@ -209,7 +209,7 @@ body {
   border: 0;
 }
 
-#wrap0 #main #menu #gnb li {
+#wrap0 #main #menu .gnb li {
   font-size: var(--menuLiFont);
   line-height: var(--menuHeight);
   margin-left: calc(var(--winWidth) * 0.02);
@@ -217,7 +217,7 @@ body {
   border: var(--menuBorder);
 }
 
-#wrap0 #main #menu #gnb li a {
+#wrap0 #main #menu .gnb li a {
   text-decoration: none;
   color: inherit;
   border: 0;
