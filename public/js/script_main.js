@@ -23,7 +23,9 @@ function initialization() {
         g_onLoad = true;
         getWinSize();
         getScrollTop();
-        if (!isMobile()) initThree();
+        if (!isMobile()) {
+            if (!rdev) initThree();
+        }
         if (g_reactLoaded) {
             log('react loaded normally.')
             reactComptLoad();

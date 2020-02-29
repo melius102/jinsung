@@ -81,8 +81,8 @@
 
 /* sign-form */
 :root {
-    --signFormW: calc(var(--winWidth) * 0.5);
-    --signFormH: calc(var(--winHeight) * 0.5);
+    --signFormW: min(500px, calc(var(--winWidth) * 0.5));
+    --signFont: 18px;
 }
 
 #wrap1 #sign-form {
@@ -90,7 +90,7 @@
     width: var(--signFormW);
     top: 50%;
     left: 50%;
-    margin-top: calc(var(--signFormH)/-2);
+    transform: translateY(calc(-50%));
     margin-left: calc(var(--signFormW)/-2);
     display: none;
     border: 1px solid var(--mainColor);
@@ -109,6 +109,7 @@
     border: 0;
     border-bottom: 1px solid var(--mainColor);
     background-color: transparent;
+    font-size: var(--signFont);
 }
 
 #wrap1 #sign-form .btns {
@@ -123,6 +124,7 @@
     color: var(--subColor);
     background-color: var(--mainColor);
     border: 0;
+    font-size: var(--signFont);
 }
 
 #wrap1 #sign-form .btns button:disabled {
@@ -131,6 +133,7 @@
 
 #wrap1 #sign-form #fb-password-reset {
     margin-top: 10px;
+    font-size: var(--signFont);
     border: 0;
 }
 

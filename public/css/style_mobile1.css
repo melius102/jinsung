@@ -32,4 +32,18 @@
     display: block;
     text-align: right;
   }
+
+  /* sign-form */
+  :root {
+    --signFormW: max(200px, calc(var(--winWidth) * 0.8));
+    --signFont: max(16px, calc(var(--winWidth) * 0.16 * 0.15));
+  }
+
+  #wrap1 #sign-form>div {
+    padding: max(10px, calc(var(--winWidth) * 0.1 * 0.3));
+  }
+
+  #wrap1 #sign-form input {
+    width: max(160px, calc(var(--winWidth) * 0.5));
+  }
 }
