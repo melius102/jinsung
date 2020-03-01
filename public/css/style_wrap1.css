@@ -85,6 +85,10 @@
     --signFont: 18px;
 }
 
+#wrap1 {
+    background-color: #DADAD2;
+}
+
 #wrap1 #sign-form {
     position: fixed;
     width: var(--signFormW);

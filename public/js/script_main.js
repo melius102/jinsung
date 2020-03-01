@@ -75,7 +75,7 @@ function getMenuListPos() {
         g_menuList.push(parseInt($(this).offset().top));
     });
     g_menuPose.story = $('#story').offset().top;
-    g_menuPose.products = $('#products').offset().top;
+    g_menuPose.businesses = $('#businesses').offset().top;
     g_menuPose.contact = $('#contact').offset().top;
 }
 
@@ -120,11 +120,11 @@ function setOpacity() {
     opacity = opacityCtrl(dLen, g_menuPose.story - dLen, 100000, 100000);
     $("#menu").css({ opacity });
 
-    opacity = opacityCtrl(dLen, g_menuPose.story - dLen, g_menuPose.story + dLen, g_menuPose.products);
+    opacity = opacityCtrl(dLen, g_menuPose.story - dLen, g_menuPose.story + dLen, g_menuPose.businesses);
     $("#story").css({ opacity });
 
-    opacity = opacityCtrl(g_menuPose.story + dLen, g_menuPose.products, g_menuPose.contact - dLen, g_menuPose.contact);
-    $("#products").css({ opacity });
+    opacity = opacityCtrl(g_menuPose.story + dLen, g_menuPose.businesses, g_menuPose.contact - dLen, g_menuPose.contact);
+    $("#businesses").css({ opacity });
 
     opacity = opacityCtrl(g_menuPose.contact - dLen, g_menuPose.contact, 100000, 100000);
     $("#contact").css({ opacity });

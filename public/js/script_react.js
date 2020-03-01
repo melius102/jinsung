@@ -1,12 +1,12 @@
-class Product extends React.Component {
+class Business extends React.Component {
     constructor(props) {
         super(props);
     }
 
     componentDidMount() {
         if (this.props.index == 1) {
-            // log('componentDidMount product', this._reactInternalFiber.key);
-            let event = new CustomEvent("productMounted", {
+            // log('componentDidMount business', this._reactInternalFiber.key);
+            let event = new CustomEvent("businessMounted", {
                 detail: { key: this._reactInternalFiber.key }
             });
             document.dispatchEvent(event);
@@ -14,7 +14,7 @@ class Product extends React.Component {
     }
 
     render() {
-        let className = 'product menu-item';
+        let className = 'business menu-item';
         if (this.props.side == 'right') className += ` ${this.props.side}`;
         return (
             <div className={className}>
@@ -125,7 +125,7 @@ class ArrowBtn extends React.Component {
 
 function reactComptLoad() {
     log('reactComptLoad');
-    document.addEventListener("productMounted", evt => {
+    document.addEventListener("businessMounted", evt => {
         getMenuListPos();
         arrowBtnUpdate();
     });
@@ -133,11 +133,11 @@ function reactComptLoad() {
 }
 
 function reactComptRender() {
-    let products = [];
+    let businesses = [];
     for (let i = 0; i < dscrp.length; i++) {
-        products.push(<Product key={i} index={dscrp.length - i} dscrp={dscrp[i]} imgSrc={imgSrc[i]} side={imgSide[i]} />);
+        businesses.push(<Business key={i} index={dscrp.length - i} dscrp={dscrp[i]} imgSrc={imgSrc[i]} side={imgSide[i]} />);
     }
-    ReactDOM.render(<div>{products}</div>, $('#product-list')[0]);
+    ReactDOM.render(<div>{businesses}</div>, $('#business-list')[0]);
 
     let contacts = [];
     for (let i = 0; i < contactTitle.length; i++) contacts.push(

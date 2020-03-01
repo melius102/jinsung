@@ -263,32 +263,32 @@ body {
 }
 
 
-/* products */
+/* businesses */
 :root {
-  --productsPFont: min(22px, calc(var(--winWidth) * 0.22 * 0.08));
+  --businessesPFont: min(22px, calc(var(--winWidth) * 0.22 * 0.08));
 }
 
-#wrap0 #main #products {
+#wrap0 #main #businesses {
   position: relative;
   opacity: 0;
   border: 0;
 }
 
-#wrap0 #main #products #product-list {
+#wrap0 #main #businesses #business-list {
   border: 0;
 }
 
-#wrap0 #main #products #product-list>div {
+#wrap0 #main #businesses #business-list>div {
   border: 0;
 }
 
-#wrap0 #main #products #product-list>div .product {
+#wrap0 #main #businesses #business-list>div .business {
   position: relative;
   height: var(--winHeight);
   border: 0;
 }
 
-#wrap0 #main #products #product-list>div .product .img {
+#wrap0 #main #businesses #business-list>div .business .img {
   position: absolute;
   top: calc(var(--menuHeight) + var(--winHeight) * 0.0);
   left: calc(var(--winWidth) * 0.05);
@@ -298,28 +298,28 @@ body {
   border: 0;
 }
 
-#wrap0 #main #products #product-list>div .product .img img {
+#wrap0 #main #businesses #business-list>div .business .img img {
   vertical-align: bottom;
   min-width: 100%;
   min-height: 100%;
   border: 0;
 }
 
-#wrap0 #main #products #product-list>div .product p {
+#wrap0 #main #businesses #business-list>div .business p {
   position: absolute;
   width: calc(var(--winWidth) * 0.33);
   bottom: calc(var(--winHeight) * 0.05);
   right: calc(var(--winWidth) * 0.05);
-  font-size: var(--productsPFont);
+  font-size: var(--businessesPFont);
   border: 0;
 }
 
-#wrap0 #main #products #product-list>div .product.right .img {
+#wrap0 #main #businesses #business-list>div .business.right .img {
   right: calc(var(--winWidth) * 0.05);
   left: auto;
 }
 
-#wrap0 #main #products #product-list>div .product.right p {
+#wrap0 #main #businesses #business-list>div .business.right p {
   left: calc(var(--winWidth) * 0.05);
   right: auto;
 }

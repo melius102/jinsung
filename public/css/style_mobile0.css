@@ -15,17 +15,17 @@
     width: calc(var(--winWidth) * 0.43);
   }
 
-  /* products */
+  /* businesses */
   :root {
-    --productsPFont: max(calc(26px * 0.7), calc(var(--winWidth) * 0.22 * 0.08));
+    --businessesPFont: max(calc(26px * 0.7), calc(var(--winWidth) * 0.22 * 0.08));
   }
 
-  #wrap0 #main #products #product-list>div .product .img {
+  #wrap0 #main #businesses #business-list>div .business .img {
     width: calc(var(--winWidth) * 0.45);
     height: calc(var(--winHeight) * 0.7);
   }
 
-  #wrap0 #main #products #product-list>div .product p {
+  #wrap0 #main #businesses #business-list>div .business p {
     width: calc(var(--winWidth) * 0.43);
   }
 
@@ -174,21 +174,21 @@
     margin: 20px auto 0;
   }
 
-  /* products */
+  /* businesses */
   :root {
-    --productsPFont: max(calc(22px * 0.7), calc(var(--winWidth) * 0.22 * 0.08));
+    --businessesPFont: max(calc(22px * 0.7), calc(var(--winWidth) * 0.22 * 0.08));
   }
 
-  #wrap0 #main #products {
+  #wrap0 #main #businesses {
     position: static;
   }
 
-  #wrap0 #main #products #product-list>div .product {
+  #wrap0 #main #businesses #business-list>div .business {
     position: static;
     height: auto;
   }
 
-  #wrap0 #main #products #product-list>div .product .img {
+  #wrap0 #main #businesses #business-list>div .business .img {
     position: static;
     width: calc(var(--winWidth) * 0.94);
     height: calc(var(--winHeight) * 0.5);
@@ -196,10 +196,10 @@
     margin: 0 auto;
   }
 
-  #wrap0 #main #products #product-list>div .product p {
+  #wrap0 #main #businesses #business-list>div .business p {
     position: static;
     width: calc(var(--winWidth) * 0.94);
-    font-size: var(--productsPFont);
+    font-size: var(--businessesPFont);
     margin: 20px auto 0;
   }
 
