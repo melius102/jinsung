@@ -1,5 +1,5 @@
 const log = console.log;
-const rdev = 1;
+const rdev = 0;
 
 let g_mainColor = '#444242'; //'#444242', '#0000FF';
 let g_subColor = '#EEEEEE'; //'#EEEEEE', '#FF0000';
@@ -165,8 +165,21 @@ function addMap() {
 }
 
 function goIntroAni() {
+    // document.addEventListener("productMounted", evt => {
+    //     log("productMounted", evt);
+    // });
+
+    if (rdev) $("#intro").children().delay(100).fadeIn(100);
+    else $("#intro").children().delay(500).fadeIn(1000);
+    finIntroAni();
+}
+
+let g_finIntroAni = 0;
+function finIntroAni() {
+    g_finIntroAni++;
+    if (g_finIntroAni != 2) return;
     if (rdev) {
-        $("#intro").children().delay(100).fadeIn(100).delay(100).fadeIn(0, function () {
+        $("#intro").children().delay(100).fadeOut(100, () => {
             $("#intro").animate({
                 top: `-${g_winHeight}px`
             }, 100).fadeOut(0, function () {
@@ -175,8 +188,9 @@ function goIntroAni() {
             });
             location.href = '#story';
         });
-    } else {
-        $("#intro").children().delay(500).fadeIn(1000).delay(1000).fadeIn(0, function () {
+    }
+    else {
+        $("#intro").children().delay(500).fadeOut(1000, () => {
             $("#intro").animate({
                 top: `-${g_winHeight}px`
             }, 1000).fadeOut(0, function () {

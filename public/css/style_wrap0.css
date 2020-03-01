@@ -52,6 +52,10 @@ body {
   background-color: var(--subColor);
 }
 
+.logo-font {
+  font-family: 'Colonna';
+}
+
 #wrap0 {
   border: 0;
   user-select: none;
@@ -82,7 +86,6 @@ body {
 
 #wrap0 #intro>div span {
   color: inherit;
-  font-family: 'Colonna';
   font-size: min(56px, calc(var(--winWidth) * 0.56 * 0.08));
   border: 0;
 }
@@ -135,7 +138,6 @@ body {
   left: calc(var(--winWidth) * 0.125);
   font-size: min(90px, calc(var(--winWidth) * 0.90 * 0.08));
   font-weight: normal;
-  font-family: 'Colonna';
   border: 0;
 }
 
@@ -191,7 +193,6 @@ body {
 #wrap0 #main #menu #title a {
   text-decoration: none;
   font-size: var(--menuTitleFont);
-  font-family: 'Colonna';
   color: inherit;
   border: var(--menuBorder);
   margin: auto;

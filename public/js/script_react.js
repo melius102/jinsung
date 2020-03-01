@@ -129,6 +129,13 @@ function reactComptLoad() {
         getMenuListPos();
         arrowBtnUpdate();
     });
+
+    document.addEventListener("productMounted", evt => {
+        if (evt.detail.key == 9) {
+            finIntroAni();
+        }
+    });
+
     reactComptRender();
 }
 
@@ -157,6 +164,14 @@ function reactComptRender() {
 }
 
 class Product extends React.Component {
+
+    componentDidMount() {
+        let event = new CustomEvent("productMounted", {
+            detail: { key: this._reactInternalFiber.key }
+        });
+        document.dispatchEvent(event);
+    }
+
     render() {
         return (
             <div className={"product"}>

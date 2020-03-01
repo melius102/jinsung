@@ -32,7 +32,6 @@
 #wrap1 #menu1 #title1 a {
     text-decoration: none;
     font-size: var(--menuTitleFont);
-    font-family: 'Colonna';
     color: inherit;
     border: var(--menuBorder);
     margin: auto;
@@ -165,7 +164,7 @@
 
 /* products */
 :root {
-    --productH: 400px;
+    --productH: calc(var(--winWidth) / 4);
 }
 
 #wrap1 #products {
@@ -188,7 +187,7 @@
 
 #wrap1 #products #product-list>div .product {
     position: relative;
-    width: 33.3%;
+    width: 25%;
     height: var(--productH);
     border: 0;
 }
@@ -239,4 +238,27 @@
     padding: 20px;
     border: 0;
     color: inherit;
+}
+
+#wrap1 #footer {
+    width: calc(var(--winWidth) * 0.94);
+    margin: 0 auto;
+    border: 0;
+    text-align: center;
+    padding: 30px 30px;
+}
+
+#wrap1 #footer p {
+    border: 0;
+}
+
+#wrap1 #footer p span {
+    display: inline-block;
+    padding: 0 10px;
+    border: 0;
+}
+
+#wrap1 #footer p span.logo {
+    font-size: larger;
+    border: 0;
 }
