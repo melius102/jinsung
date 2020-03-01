@@ -1,3 +1,8 @@
+:root {
+    --subColor3: #DADAD2;
+    --subColor4: #DADAD2CC;
+}
+
 #wrap1 {
     width: 100%;
     user-select: none;
@@ -11,9 +16,10 @@
     top: 0;
     width: calc(var(--winWidth) * 0.94);
     margin: 0 auto;
-    background-color: var(--subColor);
+    background-color: var(--subColor3);
     border: 0;
     border-bottom: 1px solid var(--mainColor);
+    z-index: 1;
 }
 
 #wrap1 #menu1 #title1 {
@@ -86,18 +92,19 @@
 }
 
 #wrap1 {
-    background-color: #DADAD2;
+    background-color: var(--subColor3);
 }
 
 #wrap1 #sign-form {
     position: fixed;
     width: var(--signFormW);
-    top: 50%;
     left: 50%;
-    transform: translateY(calc(-50%));
+    top: 25%;
+    /* transform: translateY(calc(-50%)); */
     margin-left: calc(var(--signFormW)/-2);
     display: none;
     border: 1px solid var(--mainColor);
+    background-color: var(--subColor3);
 }
 
 #wrap1 #sign-form>div {
@@ -125,7 +132,7 @@
     margin: 10px;
     margin-top: 25px;
     padding: 10px 20px;
-    color: var(--subColor);
+    color: var(--subColor3);
     background-color: var(--mainColor);
     border: 0;
     font-size: var(--signFont);
@@ -154,4 +161,82 @@
 
 #wrap1 #sign-form .sing-in-form #fb-password-reset {
     display: inline-block;
+}
+
+
+/* products */
+:root {
+    --productW: 300px;
+    --productH: 400px;
+}
+
+#wrap1 #products {
+    width: calc(var(--winWidth) * 0.94);
+    height: 1000px;
+    margin: 0 auto;
+    border: 0;
+}
+
+#wrap1 #products #product-list {
+    border: 0;
+}
+
+#wrap1 #products #product-list>div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    border: 0;
+}
+
+
+#wrap1 #products #product-list>div .product {
+    position: relative;
+    width: var(--productW);
+    height: var(--productH);
+    border: 0;
+    margin: 30px;
+}
+
+#wrap1 #products #product-list>div .product img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 0;
+}
+
+#wrap1 #products #product-list>div .product>div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    background-color: rgba(100, 100, 100, 0.2);
+    border: 0;
+}
+
+#wrap1 #products #product-list>div .product>div:hover {
+    opacity: 0.8;
+}
+
+#wrap1 #products #product-list>div .product>div .table {
+    display: table;
+    width: 100%;
+    height: 50%;
+    border: 0;
+}
+
+#wrap1 #products #product-list>div .product>div .table h2 {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    border: 0;
+}
+
+#wrap1 #products #product-list>div .product>div .table p {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    padding: 20px;
+    border: 0;
 }

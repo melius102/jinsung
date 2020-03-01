@@ -1,5 +1,5 @@
 const log = console.log;
-const rdev = 0;
+const rdev = 1;
 
 let g_mainColor = '#444242'; //'#444242', '#0000FF';
 let g_subColor = '#EEEEEE'; //'#EEEEEE', '#FF0000';
@@ -34,19 +34,8 @@ function initialization() {
         }
 
         // event handler
-        document.addEventListener('scroll', () => {
-            getScrollTop();
-            arrowBtnUpdate();
-            setOpacity();
-        }, false);
-
-        window.addEventListener('resize', () => {
-            getWinSize();
-            getScrollTop();
-            getMenuListPos();
-            arrowBtnUpdate();
-            setOpacity();
-        });
+        document.addEventListener('scroll', hScroll, false);
+        window.addEventListener('resize', hResize);
 
         $('.hamburger-btn').click(function (evt) {
             $('.gnb').stop().slideToggle('fast');
@@ -69,6 +58,20 @@ function initialization() {
     });
 }
 
+function hResize() {
+    getWinSize();
+    getScrollTop();
+    getMenuListPos();
+    arrowBtnUpdate();
+    setOpacity();
+}
+
+function hScroll() {
+    getScrollTop();
+    arrowBtnUpdate();
+    setOpacity();
+}
+
 function getMenuListPos() {
     g_menuList = [];
     $('.menu-item').each(function (i) {
@@ -84,7 +87,7 @@ function getWinSize() {
 
     g_winWidth = $(window).width();
     g_winHeight = $(window).height();
-    // g_winHeight = $(window).outerHeight(); // for including hscroll & for address bar of mobile
+    // g_winHeight = $(window).outerHeight(); // for including horizontal-scroll & for address bar of mobile
     // log(g_winHeight);
 
     document.documentElement.style.setProperty('--winWidth', `${g_winWidth}px`);
@@ -94,9 +97,9 @@ function getWinSize() {
     document.documentElement.style.setProperty('--subColor', g_subColor);
     document.documentElement.style.setProperty('--subColor2', g_subColor + 'CC');
 
-    let imgWidth = $("#story .img img").width();
-    let divWidth = $("#story .img").width();
-    $("#story .img img").css({ marginLeft: `${divWidth / 2 - imgWidth / 2}px` });
+    // let imgWidth = $("#story .img img").width();
+    // let divWidth = $("#story .img").width();
+    // $("#story .img img").css({ marginLeft: `${divWidth / 2 - imgWidth / 2}px` });
 
     if (window.matchMedia("(max-width: 768px)").matches) {
         $('.gnb').hide().addClass('mobile');

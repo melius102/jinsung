@@ -134,9 +134,9 @@ function reactComptLoad() {
 
 function reactComptRender() {
     let businesses = [];
-    for (let i = 0; i < dscrp.length; i++) {
-        businesses.push(<Business key={i} index={dscrp.length - i} dscrp={dscrp[i]} imgSrc={imgSrc[i]} side={imgSide[i]} />);
-    }
+    for (let i = 0; i < dscrp.length; i++) businesses.push(
+        <Business key={i} index={dscrp.length - i} dscrp={dscrp[i]} imgSrc={imgSrc[i]} side={imgSide[i]} />
+    );
     ReactDOM.render(<div>{businesses}</div>, $('#business-list')[0]);
 
     let contacts = [];
@@ -144,6 +144,35 @@ function reactComptRender() {
         <Contact key={i} title={contactTitle[i]} content={contactContent[i]} />
     );
     ReactDOM.render(<div>{contacts}</div>, $('#contact-list')[0]);
+
+    let products = [];
+    let productImgSrc = "img/alcantara_cover.webp";
+    let productTitle = "Alcantara Cover";
+    let productDesc = `Lorem ipsum dolor sit amet, consectetur adipiscing
+     elit, sed do eiusmod cillum dolore eu fugiat nulla pariatur.`;
+
+    for (let i = 0; i < 4; i++) products.push(
+        <Product key={i} imgSrc={productImgSrc} title={productTitle} desc={productDesc} />
+    );
+    ReactDOM.render(<div>{products}</div>, $('#product-list')[0]);
+}
+
+class Product extends React.Component {
+    render() {
+        return (
+            <div className={"product"}>
+                <img src={this.props.imgSrc} />
+                <div>
+                    <div className={"table"}>
+                        <h2>{this.props.title}</h2>
+                    </div>
+                    <div className={"table"}>
+                        <p>{this.props.desc}</p>
+                    </div>
+                </div>
+            </div>
+        );
+    }
 }
 
 function arrowBtnUpdate() {
@@ -152,7 +181,7 @@ function arrowBtnUpdate() {
 
 g_reactLoaded = true;
 if (g_onLoad) {
-    log('react loaded late.')
+    log('react loaded late.');
     reactComptLoad();
     addMap();
     setOpacity();
