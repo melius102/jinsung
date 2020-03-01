@@ -146,12 +146,11 @@ function reactComptRender() {
     ReactDOM.render(<div>{contacts}</div>, $('#contact-list')[0]);
 
     let products = [];
-    let productImgSrc = "img/alcantara_cover.webp";
-    let productTitle = "Alcantara Cover";
-    let productDesc = `Lorem ipsum dolor sit amet, consectetur adipiscing
-     elit, sed do eiusmod cillum dolore eu fugiat nulla pariatur.`;
+    let productImgSrc = "https://via.placeholder.com/400"
+    let productTitle = "title";
+    let productDesc = "product description";
 
-    for (let i = 0; i < 4; i++) products.push(
+    for (let i = 0; i < 5; i++) products.push(
         <Product key={i} imgSrc={productImgSrc} title={productTitle} desc={productDesc} />
     );
     ReactDOM.render(<div>{products}</div>, $('#product-list')[0]);

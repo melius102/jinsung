@@ -1,5 +1,9 @@
 /* tablet 768px ~ 992px 1100px or */
-@media screen and (max-width: 1100px) {}
+@media screen and (max-width: 1100px) {
+  #wrap1 #products #product-list>div .product {
+    width: 50%;
+  }
+}
 
 /* mobile 0 ~ 768px */
 @media screen and (max-width: 768px) {
@@ -45,5 +49,9 @@
 
   #wrap1 #sign-form input {
     width: max(160px, calc(var(--winWidth) * 0.5));
+  }
+
+  #wrap1 #products #product-list>div .product {
+    width: 100%;
   }
 }
