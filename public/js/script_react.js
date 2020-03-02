@@ -62,7 +62,8 @@ class Product extends React.Component {
     hClick(evt) {
         // react synthetic event is reused for performance reason.
         if (this.state.hover == true) {
-            alert(`hClick ${this.props.index}`);
+            // alert(`hClick ${this.props.index}`);
+            showProductDetail(this.props.index);
         }
     }
 
@@ -213,7 +214,7 @@ function reactComptRender() {
     for (let i = 0; i < 5; i++) products.push(
         <Product key={i} index={i} imgSrc={productImgSrc} title={productTitle} desc={productDesc} />
     );
-    ReactDOM.render(<div>{products}</div>, $('#product-list')[0]);
+    ReactDOM.render(<div id="pdt-list">{products}</div>, $('#product-contents')[0]);
 }
 
 function arrowBtnUpdate() {

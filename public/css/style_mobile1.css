@@ -3,7 +3,7 @@
     --productH: calc(var(--winWidth) / 3);
   }
 
-  #wrap1 #products #product-list>div .product {
+  #wrap1 #product-contents #pdt-list .product {
     width: 33.3%;
   }
 }
@@ -14,7 +14,7 @@
     --productH: calc(var(--winWidth) / 2);
   }
 
-  #wrap1 #products #product-list>div .product {
+  #wrap1 #product-contents #pdt-list .product {
     width: 50%;
   }
 }
@@ -69,7 +69,7 @@
     --productH: var(--winWidth);
   }
 
-  #wrap1 #products #product-list>div .product {
+  #wrap1 #product-contents #pdt-list .product {
     width: 100%;
   }
 }
