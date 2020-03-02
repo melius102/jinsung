@@ -40,6 +40,59 @@ class Contact extends React.Component {
     }
 }
 
+class Product extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            hover: false,
+            time: 100
+        };
+        this.hClick = this.hClick.bind(this);
+        this.hMouseEnter = this.hMouseEnter.bind(this);
+        this.hMouseLeave = this.hMouseLeave.bind(this);
+    }
+
+    componentDidMount() {
+        let event = new CustomEvent("productMounted", {
+            detail: { index: this.props.index }
+        });
+        document.dispatchEvent(event);
+    }
+
+    hClick(evt) {
+        // react synthetic event is reused for performance reason.
+        if (this.state.hover == true) {
+            alert(`hClick ${this.props.index}`);
+        }
+    }
+
+    hMouseEnter(evt) {
+        // log("hMouseEnter", this._reactInternalFiber.key);
+        setTimeout(() => { this.setState({ hover: true }); }, this.state.time);
+    }
+
+    hMouseLeave(evt) {
+        // log("hMouseLeave", this._reactInternalFiber.key);
+        setTimeout(() => { this.setState({ hover: false }); }, this.state.time);
+    }
+
+    render() {
+        return (
+            <div className={"product"} onClick={this.hClick} onMouseEnter={this.hMouseEnter} onMouseLeave={this.hMouseLeave}>
+                <img src={this.props.imgSrc} />
+                <div>
+                    <div className={"table"}>
+                        <h2>{this.props.title}</h2>
+                    </div>
+                    <div className={"table"}>
+                        <p>{this.props.desc}</p>
+                    </div>
+                </div>
+            </div>
+        );
+    }
+}
+
 class ArrowBtn extends React.Component {
     constructor(props) {
         // log('constructor');
@@ -131,7 +184,7 @@ function reactComptLoad() {
     });
 
     document.addEventListener("productMounted", evt => {
-        if (evt.detail.key == 9) {
+        if (evt.detail.index == 9) {
             finIntroAni();
         }
     });
@@ -158,35 +211,9 @@ function reactComptRender() {
     let productDesc = "product description";
 
     for (let i = 0; i < 5; i++) products.push(
-        <Product key={i} imgSrc={productImgSrc} title={productTitle} desc={productDesc} />
+        <Product key={i} index={i} imgSrc={productImgSrc} title={productTitle} desc={productDesc} />
     );
     ReactDOM.render(<div>{products}</div>, $('#product-list')[0]);
-}
-
-class Product extends React.Component {
-
-    componentDidMount() {
-        let event = new CustomEvent("productMounted", {
-            detail: { key: this._reactInternalFiber.key }
-        });
-        document.dispatchEvent(event);
-    }
-
-    render() {
-        return (
-            <div className={"product"}>
-                <img src={this.props.imgSrc} />
-                <div>
-                    <div className={"table"}>
-                        <h2>{this.props.title}</h2>
-                    </div>
-                    <div className={"table"}>
-                        <p>{this.props.desc}</p>
-                    </div>
-                </div>
-            </div>
-        );
-    }
 }
 
 function arrowBtnUpdate() {
