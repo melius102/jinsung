@@ -35,11 +35,11 @@ function initThree() {
 
     // scene
     let scene = new THREE.Scene();
-    scene.fog = new THREE.Fog(g_subColor, 0, fogFar);
+    scene.fog = new THREE.Fog(g_subColor0, 0, fogFar);
 
     // mesh icosahedron
     let geometry = new THREE.IcosahedronGeometry(10);
-    let material = new THREE.MeshBasicMaterial({ color: g_mainColor, wireframe: true });
+    let material = new THREE.MeshBasicMaterial({ color: g_mainColor0, wireframe: true });
     let icosahedron = new THREE.Mesh(geometry, material);
     icosahedron.position.set(0, icosahedronY_o, icosahedronZ_o);
     scene.add(icosahedron);
@@ -62,7 +62,7 @@ function initThree() {
 
     // renderer
     let renderer = new THREE.WebGLRenderer();
-    renderer.setClearColor(new THREE.Color(g_subColor));
+    renderer.setClearColor(new THREE.Color(g_subColor0));
     renderer.setSize(g_winWidth, g_winHeight);
     document.getElementById("webgl-output").appendChild(renderer.domElement);
 

@@ -10,10 +10,10 @@
   /* 100% for intro */
   --winWidth: 100%;
   --winHeight: 100vh;
-  --mainColor: #444242;
-  --mainColor2: #444242CC;
-  --subColor: #EEEEEE;
-  --subColor2: #EEEEEECC;
+  --mainColor0: #444242;
+  --mainColor1: #444242CC;
+  --subColor0: #EEEEEE;
+  --subColor1: #EEEEEECC;
 }
 
 .clearfix::after {
@@ -44,12 +44,12 @@ canvas {
   padding: 0;
   box-sizing: border-box;
   border: 1px solid red;
-  color: var(--mainColor);
+  color: var(--mainColor0);
   font-family: 'Noto Serif KR', 'Nanum Gothic';
 }
 
 body {
-  background-color: var(--subColor);
+  background-color: var(--subColor0);
 }
 
 .logo-font {
@@ -59,7 +59,7 @@ body {
 #wrap0 {
   border: 0;
   user-select: none;
-  /* background-color: var(--subColor); cannot show three ... why? */
+  /* background-color: var(--subColor0); cannot show three ... why? */
   /* font-size: 18px, 22px, 24px, 34px, 56px */
 }
 
@@ -68,15 +68,15 @@ body {
   /* width: var(--winWidth); */
   width: 100%;
   height: var(--winHeight);
-  color: var(--subColor);
-  background-color: var(--mainColor);
+  color: var(--subColor0);
+  background-color: var(--mainColor0);
   z-index: 5;
   border: 0;
   user-select: none;
 }
 
 #wrap0 #intro>div {
-  color: var(--subColor);
+  color: var(--subColor0);
   text-align: center;
   line-height: var(--winHeight);
   font-size: min(34px, calc(var(--winWidth) * 0.34 * 0.08));
@@ -127,7 +127,7 @@ body {
 #wrap0 #front {
   position: relative;
   height: var(--winHeight);
-  color: var(--mainColor);
+  color: var(--mainColor0);
   user-select: none;
   border: 0;
 }
@@ -175,9 +175,9 @@ body {
   opacity: 0;
   width: calc(var(--winWidth) * 0.94);
   margin: 0 auto;
-  background-color: var(--subColor);
+  background-color: var(--subColor0);
   border: 0;
-  border-bottom: 1px solid var(--mainColor);
+  border-bottom: 1px solid var(--mainColor0);
   z-index: 2;
 }
 
@@ -347,7 +347,7 @@ body {
   height: calc(var(--winHeight) * 0.7);
   top: calc(var(--menuHeight) + var(--winHeight) * 0.1);
   left: calc(var(--winWidth) * 0.05);
-  border: 2px solid var(--mainColor);
+  border: 2px solid var(--mainColor0);
 }
 
 #wrap0 #main #contact #map * {

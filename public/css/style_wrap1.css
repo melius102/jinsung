@@ -1,6 +1,6 @@
 :root {
-    --subColor3: #DADAD2;
-    --subColor4: #DADAD2CC;
+    --subColor2: #DADAD2;
+    --subColor3: #DADAD2CC;
 }
 
 #wrap1 {
@@ -15,9 +15,9 @@
     top: 0;
     width: calc(var(--winWidth) * 0.94);
     margin: 0 auto;
-    background-color: var(--subColor3);
+    background-color: var(--subColor2);
     border: 0;
-    border-bottom: 1px solid var(--mainColor);
+    border-bottom: 1px solid var(--mainColor0);
     z-index: 1;
 }
 
@@ -90,7 +90,7 @@
 }
 
 #wrap1 {
-    background-color: var(--subColor3);
+    background-color: var(--subColor2);
 }
 
 #wrap1 #sign-form {
@@ -101,8 +101,8 @@
     /* transform: translateY(calc(-50%)); */
     margin-left: calc(var(--signFormW)/-2);
     display: none;
-    border: 1px solid var(--mainColor);
-    background-color: var(--subColor3);
+    border: 1px solid var(--mainColor0);
+    background-color: var(--subColor2);
 }
 
 #wrap1 #sign-form>div {
@@ -116,7 +116,7 @@
     margin: 10px auto;
     margin-top: 20px;
     border: 0;
-    border-bottom: 1px solid var(--mainColor);
+    border-bottom: 1px solid var(--mainColor0);
     background-color: transparent;
     font-size: var(--signFont);
 }
@@ -130,14 +130,14 @@
     margin: 10px;
     margin-top: 25px;
     padding: 10px 20px;
-    color: var(--subColor3);
-    background-color: var(--mainColor);
+    color: var(--subColor2);
+    background-color: var(--mainColor0);
     border: 0;
     font-size: var(--signFont);
 }
 
 #wrap1 #sign-form .btns button:disabled {
-    background-color: var(--mainColor2);
+    background-color: var(--mainColor1);
 }
 
 #wrap1 #sign-form #fb-password-reset {
@@ -207,7 +207,7 @@
 
 #wrap1 #product-contents #pdt-list .product>div:hover {
     background-color: rgba(0, 0, 0, 0.7);
-    color: var(--subColor3);
+    color: var(--subColor2);
     opacity: 1;
 }
 
@@ -256,5 +256,17 @@
 
 #wrap1 #footer p span.logo {
     font-size: larger;
+    border: 0;
+}
+
+#wrap_change {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: var(--winWidth);
+    height: var(--winHeight);
+    background: red;
+    z-index: 4;
+    display: none;
     border: 0;
 }

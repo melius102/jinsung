@@ -48,8 +48,10 @@ class Product extends React.Component {
             time: 100
         };
         this.hClick = this.hClick.bind(this);
-        this.hMouseEnter = this.hMouseEnter.bind(this);
-        this.hMouseLeave = this.hMouseLeave.bind(this);
+        // this.hMouseEnter = this.hMouseEnter.bind(this);
+        // this.hMouseLeave = this.hMouseLeave.bind(this);
+        this.hMouseOver = this.hMouseOver.bind(this);
+        this.hMouseOut = this.hMouseOut.bind(this);
     }
 
     componentDidMount() {
@@ -62,24 +64,37 @@ class Product extends React.Component {
     hClick(evt) {
         // react synthetic event is reused for performance reason.
         if (this.state.hover == true) {
-            // alert(`hClick ${this.props.index}`);
+            // log(`hClick ${this.props.index}`);
             showProductDetail(this.props.index);
         }
     }
 
     hMouseEnter(evt) {
         // log("hMouseEnter", this._reactInternalFiber.key);
+        // log(`hMouseEnter ${this.props.index}`);
         setTimeout(() => { this.setState({ hover: true }); }, this.state.time);
     }
 
     hMouseLeave(evt) {
         // log("hMouseLeave", this._reactInternalFiber.key);
+        // log(`hMouseLeave ${this.props.index}`);
+        setTimeout(() => { this.setState({ hover: false }); }, this.state.time);
+    }
+
+    hMouseOver(evt) {
+        // log(`hMouseOver ${this.props.index}`);
+        setTimeout(() => { this.setState({ hover: true }); }, this.state.time);
+    }
+
+    hMouseOut(evt) {
+        // log(`hMouseOut ${this.props.index}`);
         setTimeout(() => { this.setState({ hover: false }); }, this.state.time);
     }
 
     render() {
         return (
-            <div className={"product"} onClick={this.hClick} onMouseEnter={this.hMouseEnter} onMouseLeave={this.hMouseLeave}>
+            <div className={"product"} onClick={this.hClick}
+                onMouseOver={this.hMouseOver} onMouseOut={this.hMouseOut}>
                 <img src={this.props.imgSrc} />
                 <div>
                     <div className={"table"}>

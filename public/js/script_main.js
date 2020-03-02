@@ -1,8 +1,12 @@
 const log = console.log;
 const rdev = 0;
 
-let g_mainColor = '#444242'; //'#444242', '#0000FF';
-let g_subColor = '#EEEEEE'; //'#EEEEEE', '#FF0000';
+let g_mainColor0 = '#444242'; //'#444242', '#0000FF';
+let g_mainColor1 = '#444242CC'; //'#444242', '#0000FF';
+let g_subColor0 = '#EEEEEE'; //'#EEEEEE', '#FF0000';
+let g_subColor1 = '#EEEEEECC'; //'#EEEEEE', '#FF0000';
+let g_subColor2 = '#DADAD2'; //'#EEEEEE', '#FF0000';
+let g_subColor3 = '#DADAD2CC'; //'#EEEEEE', '#FF0000';
 let g_winWidth;
 let g_winHeight;
 
@@ -37,6 +41,7 @@ function initialization() {
         document.addEventListener('scroll', hScroll, false);
         window.addEventListener('resize', hResize);
 
+        $('#oline-shop').click(hOlineShop);
         $('.hamburger-btn').click(function (evt) {
             $('.gnb').stop().slideToggle('fast');
             evt.stopPropagation();
@@ -72,6 +77,19 @@ function hScroll() {
     setOpacity();
 }
 
+function hOlineShop() {
+    wrapChange(g_subColor0, () => {
+        $('#wrap0').hide();
+        $('#wrap1').show();
+        hResize();
+        $(document).scrollTop(0);
+    });
+
+    if (rdev) {
+        // if (!firebase.auth().currentUser) $('#sign-in a').trigger('click');
+    }
+}
+
 function getMenuListPos() {
     g_menuList = [];
     $('.menu-item').each(function (i) {
@@ -92,10 +110,12 @@ function getWinSize() {
 
     document.documentElement.style.setProperty('--winWidth', `${g_winWidth}px`);
     document.documentElement.style.setProperty('--winHeight', `${g_winHeight}px`);
-    document.documentElement.style.setProperty('--mainColor', g_mainColor);
-    document.documentElement.style.setProperty('--mainColor2', g_mainColor + 'CC');
-    document.documentElement.style.setProperty('--subColor', g_subColor);
-    document.documentElement.style.setProperty('--subColor2', g_subColor + 'CC');
+    document.documentElement.style.setProperty('--mainColor0', g_mainColor0);
+    document.documentElement.style.setProperty('--mainColor1', g_mainColor1);
+    document.documentElement.style.setProperty('--subColor0', g_subColor0);
+    document.documentElement.style.setProperty('--subColor1', g_subColor1);
+    document.documentElement.style.setProperty('--subColor2', g_subColor2);
+    document.documentElement.style.setProperty('--subColor3', g_subColor3);
 
     // let imgWidth = $("#story .img img").width();
     // let divWidth = $("#story .img").width();
@@ -198,6 +218,15 @@ function finIntroAni() {
             });
             location.href = '#front';
         });
+    }
+}
+
+function wrapChange(backgroundColor, cb) {
+    if ($('#wrap_change').is(':animated') === false) {
+        $('#wrap_change').css({
+            top: g_winHeight, backgroundColor
+        }).show().animate({ top: 0 }, 1000, cb);
+        $('#wrap_change').fadeOut(1000);
     }
 }
 

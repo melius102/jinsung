@@ -47,7 +47,7 @@
     height: calc(var(--winHeight) * 0.7);
     top: calc(var(--menuHeight) + var(--winHeight) * 0.1);
     left: calc(var(--winWidth) * 0.05);
-    border: 2px solid var(--mainColor);
+    border: 2px solid var(--mainColor0);
   }
 
   #wrap0 #main #contact #map * {
@@ -129,7 +129,7 @@
 
   #wrap0 #main #menu .hamburger-btn span {
     display: block;
-    border: var(--menuHMg) solid var(--mainColor);
+    border: var(--menuHMg) solid var(--mainColor0);
     width: calc(var(--menuHeight) * 0.7);
     margin: calc((var(--menuHeight) - var(--menuHMg)*6)/4) auto;
   }
@@ -140,12 +140,12 @@
     margin-right: 0;
     top: calc(var(--menuHeight) + 1px);
     right: 0;
-    background-color: var(--subColor2);
+    background-color: var(--subColor1);
+    width: 100%;
   }
 
   #wrap0 #main #menu .gnb li {
     display: block;
-    text-align: right;
   }
 
   /* story */
