@@ -223,10 +223,17 @@ function finIntroAni() {
 
 function wrapChange(backgroundColor, cb) {
     if ($('#wrap_change').is(':animated') === false) {
-        $('#wrap_change').css({
-            top: g_winHeight, backgroundColor
-        }).show().animate({ top: 0 }, 1000, cb);
-        $('#wrap_change').fadeOut(1000);
+        if (rdev) {
+            $('#wrap_change').css({
+                top: g_winHeight, backgroundColor
+            }).show().animate({ top: 0 }, 200, cb);
+            $('#wrap_change').fadeOut(200);
+        } else {
+            $('#wrap_change').css({
+                top: g_winHeight, backgroundColor
+            }).show().animate({ top: 0 }, 1000, cb);
+            $('#wrap_change').fadeOut(1000);
+        }
     }
 }
 

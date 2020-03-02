@@ -45,7 +45,7 @@ class Product extends React.Component {
         super(props);
         this.state = {
             hover: false,
-            time: 100
+            time: 10
         };
         this.hClick = this.hClick.bind(this);
         // this.hMouseEnter = this.hMouseEnter.bind(this);
@@ -65,7 +65,10 @@ class Product extends React.Component {
         // react synthetic event is reused for performance reason.
         if (this.state.hover == true) {
             // log(`hClick ${this.props.index}`);
-            showProductDetail(this.props.index);
+            let event = new CustomEvent("showProductDetail", {
+                detail: { index: this.props.index }
+            });
+            document.dispatchEvent(event);
         }
     }
 
@@ -108,6 +111,13 @@ class Product extends React.Component {
         );
     }
 }
+
+document.addEventListener("showProductDetail", evt => {
+    wrapChange(g_subColor2, () => {
+        showProductDetail(evt.detail.index);
+        $(document).scrollTop(0);
+    });
+});
 
 class ArrowBtn extends React.Component {
     constructor(props) {

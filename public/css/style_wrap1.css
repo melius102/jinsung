@@ -236,6 +236,44 @@
     color: inherit;
 }
 
+#wrap1 #product-contents #pdt-detail {
+    min-height: var(--winHeight);
+    border: 0;
+}
+
+#wrap1 #product-contents #pdt-detail img {
+    display: block;
+    margin: 0 auto;
+    width: 50%;
+    object-fit: cover;
+    border: 0;
+}
+
+#wrap1 #product-contents #pdt-detail h1 {
+    text-align: center;
+    padding: 10px;
+    border: 0;
+}
+
+#wrap1 #product-contents #pdt-detail p {
+    padding: 10px;
+    border: 0;
+}
+
+#wrap1 #product-contents #pdt-detail .btns {
+    text-align: center;
+    padding: 10px;
+    border: 0;
+}
+
+#wrap1 #product-contents #pdt-detail .btns button {
+    background-color: var(--mainColor0);
+    color: var(--subColor2);
+    border: 0;
+    padding: 10px;
+    margin: 10px;
+}
+
 #wrap1 #footer {
     width: calc(var(--winWidth) * 0.94);
     margin: 0 auto;
