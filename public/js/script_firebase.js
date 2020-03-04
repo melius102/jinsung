@@ -309,6 +309,7 @@ function showProductDetail(index) {
     ReactDOM.render(<ProductDetail productInfo={g_pInfos[index]} />, $('#product-contents')[0]);
 }
 
+// ProductDetail
 class ProductDetail extends React.Component {
     constructor(props) {
         super(props);
@@ -401,15 +402,26 @@ class ProductDetail extends React.Component {
 
         return (
             <div id="pdt-detail">
-                <img src={this.props.productInfo.imgUrl} />
-                <h1>{this.props.productInfo.title}</h1>
-                <p>{this.props.productInfo.description}</p>
-                <div>
-                    <span>옵션:</span>
-                    <select id="optSelect" onChange={this.hSelectChange}>{optionTags}</select>
+                <div className="img">
+                    <img src={this.props.productInfo.imgUrl} />
                 </div>
-                {selectedDetailCmp}
-                <div>합계:{this.state.totalPrice}원</div>
+                <div className="desc">
+                    <h1>{this.props.productInfo.title}</h1>
+                    <p>{this.props.productInfo.description}</p>
+                </div>
+                <div className="select-sum">
+                    <div className="select clearfix">
+                        <div className="title">옵션:</div>
+                        <select dir="rtl" className="opt-select" onChange={this.hSelectChange}>{optionTags}</select>
+                    </div>
+                    <div className="detail-list">
+                        {selectedDetailCmp}
+                    </div>
+                    <div className="sum clearfix">
+                        <span className="total-title">합계:</span>
+                        <span className="total-price">{this.state.totalPrice}원</span>
+                    </div>
+                </div>
                 <div className="btns">
                     <button onClick={this.hAddtoCart}>장바구니에 담기</button>
                     <button onClick={this.hBuy}>바로 구매하기</button>
@@ -436,11 +448,13 @@ class SelectedDetail extends React.Component {
 
     render() {
         return (
-            <div id="selected-detail">
-                <span>{this.props.name}</span>
-                <input type="number" defaultValue="1" min="1" max="100" onChange={this.hChange} />
-                <span>{this.props.price}원</span>
-                <button onClick={this.props.onClick}>X</button>
+            <div className="selected-detail clearfix">
+                <div className="name">{this.props.name}</div>
+                <div className="num">
+                    <input type="number" defaultValue="1" min="1" max="100" onChange={this.hChange} />
+                    <span className="price">{this.props.price}원</span>
+                    <button onClick={this.props.onClick}><i class="fas fa-times"></i></button>
+                </div>
             </div>
         );
     }
