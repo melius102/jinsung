@@ -17,6 +17,7 @@ function loadFBSDK() {
 
 function hGotoMain() {
     wrapChange(g_subColor2, () => {
+        showProductList();
         $('#wrap1').hide();
         $('#sign-form').hide();
         $('#wrap0').show();
@@ -298,6 +299,7 @@ async function loadProductInfoFB() {
 }
 
 function showProductList() {
+    title1.onclick = () => $(document).scrollTop(0);
     let products = [];
     for (let i = 0; i < g_pInfos.length; i++) products.push(
         <Product key={i} index={i} imgSrc={g_pInfos[i].imgUrl} title={g_pInfos[i].title} desc={g_pInfos[i].description} />
@@ -306,6 +308,12 @@ function showProductList() {
 }
 
 function showProductDetail(index) {
+    title1.onclick = function () {
+        wrapChange(g_subColor2, () => {
+            showProductList();
+            $(document).scrollTop(0);
+        });
+    };
     ReactDOM.render(<ProductDetail productInfo={g_pInfos[index]} />, $('#product-contents')[0]);
 }
 
@@ -323,7 +331,6 @@ class ProductDetail extends React.Component {
             options: optionsObj
         };
         this.hSelectChange = this.hSelectChange.bind(this);
-        this.hSDetailChange = this.hSDetailChange.bind(this);
     }
 
     hAddtoCart() {
@@ -374,7 +381,8 @@ class ProductDetail extends React.Component {
     }
 
     render() {
-        log('state', this.state.options);
+        log("render");
+        log('state.options', this.state.options);
 
         // props.productInfo.options
         let options = this.props.productInfo.options;
@@ -395,7 +403,8 @@ class ProductDetail extends React.Component {
             return this.state.options[v].flag == true;
         });
         let selectedDetailCmp = [];
-        selectedOptionsArr.forEach((opt, i) => {
+        selectedOptionsArr.forEach((opt) => {
+            let i = Number(opt.slice(opt.length - 1));
             selectedDetailCmp.push(<SelectedDetail key={i} name={options[opt].name} price={options[opt].price}
                 onClick={() => { this.hSDetailClick(opt, i); }} onChange={(value) => { this.hSDetailChange(opt, value) }} />);
         });
@@ -453,7 +462,7 @@ class SelectedDetail extends React.Component {
                 <div className="num">
                     <input type="number" defaultValue="1" min="1" max="100" onChange={this.hChange} />
                     <span className="price">{this.props.price}원</span>
-                    <button onClick={this.props.onClick}><i class="fas fa-times"></i></button>
+                    <button onClick={this.props.onClick}><i className="fas fa-times"></i></button>
                 </div>
             </div>
         );
